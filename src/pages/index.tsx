@@ -11,12 +11,8 @@ import { groupBy, map, prop, uniq } from "ramda";
 
 const IndexPage: React.FC<PageProps> = (props: any) => {
   const {
-    pageResources: {
-      json: {
-        data: {
-          allConstellationCard: { edges },
-        },
-      },
+    data: {
+      allConstellationCard: { edges },
     },
   } = props;
   const cards = map(prop("node"), edges) as any[];
