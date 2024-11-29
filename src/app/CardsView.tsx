@@ -2,8 +2,6 @@ import {
   ConstellationCard,
   ConstellationCardFace,
   ConstellationCardUid,
-  getCards,
-  getStacks,
 } from "@constellation-cards/cards";
 import { cardsMap, stacksMap } from "./helper";
 import React from "react";
@@ -34,7 +32,7 @@ function CardViewFace({
   card: ConstellationCard;
   face: ConstellationCardFace;
 }) {
-  const allStacks = React.useMemo(() => stacksMap(), [getStacks]);
+  const allStacks = React.useMemo(() => stacksMap(), []);
   return (
     <div className="card">
       <div className="card-content">
@@ -61,7 +59,7 @@ function CardViewFace({
 }
 
 export default function CardView(props: CardViewProps) {
-  const allCards = React.useMemo(() => cardsMap(), [getCards]);
+  const allCards = React.useMemo(() => cardsMap(), []);
 
   const cards = props.uids.map((uid) => allCards[uid]);
 
