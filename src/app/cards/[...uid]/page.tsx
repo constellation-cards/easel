@@ -1,3 +1,4 @@
+import CardsView from "@/app/CardsView";
 import { getCards } from "@constellation-cards/cards";
 
 export default async function Page({
@@ -11,14 +12,10 @@ export default async function Page({
   if (!uid || uid.length < 1) {
     throw new Error("Missing UID");
   }
-  const card = getCards().find((card) => card.uid == uid[0]);
-  if (!card) {
-    throw new Error(`Card not found with UID ${uid[0]}`);
-  }
   return (
-    <div>
-      My Post: <pre>{JSON.stringify(card, null, 2)}</pre>
-    </div>
+    <>
+      <CardsView uids={[uid[0]]} />
+    </>
   );
 }
 

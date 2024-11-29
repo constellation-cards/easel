@@ -1,3 +1,4 @@
+import CardsView from "@/app/CardsView";
 import { getStacks } from "@constellation-cards/cards";
 
 export default async function Page({
@@ -16,9 +17,10 @@ export default async function Page({
     throw new Error(`Stack not found with UID ${uid[0]}`);
   }
   return (
-    <div>
-      My Post: <pre>{JSON.stringify(stack, null, 2)}</pre>
-    </div>
+    <>
+      <h1 className="title">{stack.name}</h1>
+      <CardsView uids={stack.cards} />
+    </>
   );
 }
 

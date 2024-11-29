@@ -1,17 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.scss";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import Sidebar from "./Sidebar";
+import Footer from "./Footer";
 
 export const metadata: Metadata = {
   title: "Constellation Cards",
@@ -25,8 +16,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+      <body>
+        <div className="container is-fluid">
+          <div className="columns">
+            <div className="column is-one-quarter">
+              <Sidebar />
+            </div>
+            <div className="column"> {children}</div>
+          </div>
+        </div>
+        <Footer />
       </body>
     </html>
   );
