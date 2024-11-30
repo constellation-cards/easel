@@ -1,7 +1,7 @@
 import CardsView from "@/app/CardsView";
 import { description } from "@/app/helper";
 import { getStacks } from "@constellation-cards/cards";
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 
 interface StackPageProps {
   params: Promise<{
@@ -31,10 +31,9 @@ export default async function Page({ params }: StackPageProps) {
   );
 }
 
-export async function generateMetadata(
-  { params }: StackPageProps,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: StackPageProps): Promise<Metadata> {
   const uid = (await params).uid[0];
 
   const stack = getStacks().find((stack) => stack.uid == uid);
