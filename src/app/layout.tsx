@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.scss";
 import Sidebar from "./Sidebar";
 import Footer from "./Footer";
+import Navbar from "./Navbar";
 
 export const metadata: Metadata = {
   title: "Constellation Cards",
@@ -16,14 +17,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="container is-fluid">
-          <div className="columns">
-            <div className="column is-one-quarter">
-              <Sidebar />
-            </div>
-            <div className="column"> {children}</div>
-          </div>
-        </div>
+        <Navbar />
+        <div className="container is-fluid mt-6 pt-6">{children}</div>
         <Footer />
       </body>
     </html>
