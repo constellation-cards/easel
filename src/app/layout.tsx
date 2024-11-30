@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.scss";
-import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 

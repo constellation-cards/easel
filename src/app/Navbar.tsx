@@ -44,9 +44,9 @@ export default function Navbar() {
       aria-label="main navigation"
     >
       <div className="navbar-brand">
-        <a className="navbar-item" href="/">
+        <Link className="navbar-item" href="/">
           C.C.
-        </a>
+        </Link>
 
         <a
           role="button"
