@@ -19,7 +19,7 @@ export default async function Page({
   }
   return (
     <>
-      <section className="hero">
+      <section className="hero is-info">
         <div className="hero-body">
           <h1 className="title">{deck.name}</h1>
           {description(deck.description)}
