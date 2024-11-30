@@ -1,4 +1,5 @@
 import CardsView from "@/app/CardsView";
+import { description } from "@/app/helper";
 import { getStacks } from "@constellation-cards/cards";
 
 export default async function Page({
@@ -18,7 +19,12 @@ export default async function Page({
   }
   return (
     <>
-      <h1 className="title">{stack.name}</h1>
+      <section className="hero">
+        <div className="hero-body">
+          <h1 className="title">{stack.name}</h1>
+          {description(stack.description)}
+        </div>
+      </section>
       <CardsView uids={stack.cards} />
     </>
   );

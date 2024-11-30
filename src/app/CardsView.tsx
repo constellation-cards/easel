@@ -3,26 +3,12 @@ import {
   ConstellationCardFace,
   ConstellationCardUid,
 } from "@constellation-cards/cards";
-import { cardsMap, stacksMap } from "./helper";
+import { cardsMap, description, stacksMap } from "./helper";
 import React from "react";
 import Link from "next/link";
 
 interface CardViewProps {
   uids: ConstellationCardUid<ConstellationCard>[];
-}
-
-function description(desc: string) {
-  return desc.split("\n").map((p) => {
-    if (p.startsWith("//")) {
-      return (
-        <p key={p}>
-          <em>{p.substring(2)}</em>
-        </p>
-      );
-    } else {
-      return <p key={p}>{p}</p>;
-    }
-  });
 }
 
 function CardViewFace({
@@ -45,6 +31,7 @@ function CardViewFace({
           </Link>
         </h4>
         <div className="content">
+          <p>{face.flavor}</p>
           {description(face.description || "")}
           <ul>
             {(face.prompts || []).map((prompt) => (

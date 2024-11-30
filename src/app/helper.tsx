@@ -10,6 +10,10 @@ import path from "path";
 import { remark } from "remark";
 import html from "remark-html";
 
+export function description(text: string | undefined) {
+  return (text || "").split("\n").map((line) => <p key={line}>{line}</p>);
+}
+
 export function cardsMap(): Record<
   ConstellationCardUid<ConstellationCard>,
   ConstellationCard
