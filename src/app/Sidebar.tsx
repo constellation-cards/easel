@@ -7,6 +7,12 @@ export default function Sidebar() {
 
   return (
     <aside className="menu">
+      <p className="menu-label">Rules</p>
+      <ul className="menu-list">
+        <li>
+          <Link href={"/rules"}>Rules</Link>
+        </li>
+      </ul>
       <p className="menu-label">Decks</p>
       <ul className="menu-list">
         {allDecks.map((deck) => (

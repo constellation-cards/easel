@@ -5,6 +5,10 @@ import {
   getCards,
   getStacks,
 } from "@constellation-cards/cards";
+import fs from "fs";
+import path from "path";
+import { remark } from "remark";
+import html from "remark-html";
 
 export function cardsMap(): Record<
   ConstellationCardUid<ConstellationCard>,
@@ -24,4 +28,13 @@ export function stacksMap(): Record<
     mapObject[stack.uid] = stack;
     return mapObject;
   }, {} as Record<ConstellationCardUid<ConstellationCardStack>, ConstellationCardStack>);
+}
+
+export async function getMarkdownData(filePath: string): Promise<string> {
+  const fullPath = path.join(process.cwd(), filePath);
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+
+  const processedContent = await remark().use(html).process(fileContents);
+
+  return processedContent.toString();
 }
