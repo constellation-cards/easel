@@ -1,3 +1,9 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Constellation Cards",
+};
+
 export default function Home() {
   return (
     <>

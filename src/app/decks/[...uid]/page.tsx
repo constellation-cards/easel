@@ -1,14 +1,13 @@
 import CardsView from "@/app/CardsView";
 import { description } from "@/app/helper";
 import { getDecks } from "@constellation-cards/cards";
+import { Metadata, ResolvingMetadata } from "next";
 
-export default async function Page({
-  params,
-}: {
-  params: Promise<{
-    uid: string[];
-  }>;
-}) {
+interface DeckPageProps {
+  params: Promise<{ uid: string[] }>;
+}
+
+export default async function Page({ params }: DeckPageProps) {
   const uid = (await params).uid;
   if (!uid || uid.length < 1) {
     throw new Error("Missing UID");
@@ -28,6 +27,26 @@ export default async function Page({
       <CardsView uids={deck.cards} />
     </>
   );
+}
+
+export async function generateMetadata(
+  { params }: DeckPageProps,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const uid = (await params).uid[0];
+
+  const deck = getDecks().find((deck) => deck.uid == uid);
+
+  if (deck) {
+    return {
+      title: deck.name,
+      description: deck.description,
+    };
+  } else {
+    return {
+      title: "Unknown Deck",
+    };
+  }
 }
 
 export async function generateStaticParams() {
