@@ -69,7 +69,7 @@ cards:
     back:
       <<: *agendaback
       <<: *principal
-    qty: 6
+    quantity: 6
   - template: &facilitator
       <<: *agendafront
       name: The Facilitator

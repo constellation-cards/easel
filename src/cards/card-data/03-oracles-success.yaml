@@ -40,7 +40,7 @@ cards:
         - Allies intervened in your favor
         - An important lesson from your past came to mind
       rule: Discard to generate a hit
-    qty: 5
+    quantity: 5
   - front: *randomfront
     back: &miss
       name: Miss
@@ -54,4 +54,4 @@ cards:
         - Allies were thwarted, absent, or ineffective
         - Overconfidence sabotaged your success
       rule: Discard this card
-    qty: 5
+    quantity: 5

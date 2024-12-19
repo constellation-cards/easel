@@ -76,7 +76,7 @@ cards:
         - You suffered major blood loss
         - You broke a bone
         - You were pierced by arrows, spears, or claws
-    qty: 6
+    quantity: 6
   - front:
       <<: *tfront
       name: Weakened
@@ -104,7 +104,7 @@ cards:
         - Serious illness or poison
         - Delerium or hallucinations
         - Burns or frostbite
-    qty: 6
+    quantity: 6
   - front:
       <<: *tfront
       name: Obliged
@@ -131,7 +131,7 @@ cards:
         - Carry out illegal or dangerous activities
         - Work with a rival or enemy to achieve a goal
         - Sacrifice comrades or principles to avoid punishment
-    qty: 6
+    quantity: 6
   - front:
       <<: *tfront
       name: Wanted
@@ -159,7 +159,7 @@ cards:
         - Wanted posters or official notices
         - Guards raised an alarm
         - You're in enemy territory or surrounded
-    qty: 6
+    quantity: 6
   - front:
       <<: *tfront
       name: Magicked
@@ -187,7 +187,7 @@ cards:
       prompts:
         - Misfortune or calamity hounds you
         - A ban against doing some common thing
-    qty: 6
+    quantity: 6
   - front:
       <<: *tfront
       name: Altered
@@ -215,7 +215,7 @@ cards:
         - Polymorphed into an animal
         - Changed into a supernatural creature
         - Made undead or demonic
-    qty: 6
+    quantity: 6
   - front:
       <<: *tfront
       name: Undergeared
@@ -243,7 +243,7 @@ cards:
         - Stripped of weapons by enemies
         - Magical tools disenchanted
         - Completely without rations or shelter
-    qty: 6
+    quantity: 6
   - front:
       <<: *tfront
       name: Hindered
@@ -271,4 +271,4 @@ cards:
         - Temporarily blind or deaf
         - Unable to cast spells or use other special abilities
         - A breakdown or dissociation
-    qty: 6
+    quantity: 6
