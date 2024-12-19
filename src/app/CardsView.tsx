@@ -2,13 +2,13 @@ import {
   ConstellationCard,
   ConstellationCardFace,
   ConstellationCardUid,
-} from "@constellation-cards/cards";
+} from "@/cards";
 import { cardsMap, description, stacksMap } from "./helper";
 import React from "react";
 import Link from "next/link";
 
 interface CardViewProps {
-  uids: ConstellationCardUid<ConstellationCard>[];
+  uids: ConstellationCardUid[];
 }
 
 function CardViewFace({

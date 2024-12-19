@@ -1,4 +1,4 @@
-import { getDecks } from "@constellation-cards/cards";
+import { getDecks } from "@/cards";
 import { Metadata } from "next";
 import { description } from "./helper";
 import Link from "next/link";

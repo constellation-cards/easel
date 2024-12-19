@@ -1,6 +1,6 @@
 import CardsView from "@/app/CardsView";
 import { description } from "@/app/helper";
-import { getStacks } from "@constellation-cards/cards";
+import { getStacks } from "@/cards";
 import { Metadata } from "next";
 
 interface StackPageProps {

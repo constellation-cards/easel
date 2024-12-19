@@ -1,5 +1,5 @@
 import CardsView from "@/app/CardsView";
-import { getCards } from "@constellation-cards/cards";
+import { getCards } from "@/cards";
 import { Metadata } from "next";
 
 interface CardPageProps {

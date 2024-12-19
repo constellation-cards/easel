@@ -1,4 +1,4 @@
-import { getDecks, getStacks } from "@constellation-cards/cards";
+import { getDecks, getStacks } from "@/cards";
 import Link from "next/link";
 
 interface DropdownLink {

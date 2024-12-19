@@ -4,7 +4,7 @@ import {
   ConstellationCardUid,
   getCards,
   getStacks,
-} from "@constellation-cards/cards";
+} from "@/cards";
 import fs from "fs";
 import path from "path";
 import { remark } from "remark";
@@ -14,24 +14,21 @@ export function description(text: string | undefined) {
   return (text || "").split("\n").map((line) => <p key={line}>{line}</p>);
 }
 
-export function cardsMap(): Record<
-  ConstellationCardUid<ConstellationCard>,
-  ConstellationCard
-> {
+export function cardsMap(): Record<ConstellationCardUid, ConstellationCard> {
   return getCards().reduce((mapObject, card) => {
     mapObject[card.uid] = card;
     return mapObject;
-  }, {} as Record<ConstellationCardUid<ConstellationCard>, ConstellationCard>);
+  }, {} as Record<ConstellationCardUid, ConstellationCard>);
 }
 
 export function stacksMap(): Record<
-  ConstellationCardUid<ConstellationCardStack>,
+  ConstellationCardUid,
   ConstellationCardStack
 > {
   return getStacks().reduce((mapObject, stack) => {
     mapObject[stack.uid] = stack;
     return mapObject;
-  }, {} as Record<ConstellationCardUid<ConstellationCardStack>, ConstellationCardStack>);
+  }, {} as Record<ConstellationCardUid, ConstellationCardStack>);
 }
 
 export async function getMarkdownData(filePath: string): Promise<string> {
