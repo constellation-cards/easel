@@ -17,7 +17,7 @@ export default function Page() {
               <a href="/cards.pdf">cards.pdf</a> (printable cards)
             </li>
             <li>
-              <a href="/cards.pdf">cards.csv</a> (data merge)
+              <a href="/cards.csv">cards.csv</a> (data merge)
             </li>
             <li>
               <a href="/cards.json">cards.json</a> (raw data)
