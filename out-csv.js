@@ -1,16 +1,9 @@
+const { stringify } = require("csv-stringify/sync");
 const ejs = require("ejs");
 const fs = require("fs");
 const ramda = require("ramda");
 
 const { concat, isEmpty, isNil, isNotEmpty, isNotNil, pick, reduce, repeat } = ramda;
-
-// Paths we care about
-
-const [infile, outfile, ...args] = process.argv.slice(2)
-
-const CARDS_JSON = infile
-const CARDS_TEX_EJS = "cards.tex.ejs"
-const CARDS_TEX = outfile
 
 // Turn an array of records into a map of UID => [Record, Record...]
 function recordsToMap(records) {
@@ -20,7 +13,9 @@ function recordsToMap(records) {
   }, {}, records);
 }
 
-const cardDataRaw = fs.readFileSync(CARDS_JSON).toString();
+const [infile, outfile] = process.argv.slice(2);
+
+const cardDataRaw = fs.readFileSync(infile).toString();
 const cardData = JSON.parse(cardDataRaw);
 
 const decks = recordsToMap(cardData.decks);
@@ -50,9 +45,31 @@ if (isNotNil(process.env.CRUX_CARDS_DECK) && isNotEmpty(process.env.CRUX_CARDS_D
   cards = allCards
 }
 
-const description = (inputString) => inputString.split("\n").join("\n\n");
+const cardAttributes = (card) => ({
+    "UID": card.uid,
+    "Deck": card.deck.name,
+    "Stack": card.stack.name,
+    "Quantity": card.quantity
+});
 
-const template = fs.readFileSync(CARDS_TEX_EJS).toString();
-const output = ejs.render(template, {cards, description});
+const faceAttributes = (face) => ({
+    "Name": face.name,
+    "Flavor": face.flavor,
+    "Description": (face.description || "").replaceAll("\n", "\\n"),
+    "Prompts": (face.prompts || []).map(prompt => `•${prompt}`).join(""),
+    "Rule": face.rule
+});
 
-fs.writeFileSync(CARDS_TEX, output);
+csvCards = cards.map(card => {
+  return [{
+    ...cardAttributes(card),
+    "Face": "Back",
+    ...faceAttributes(card.back)
+  }, {
+    ...cardAttributes(card),
+    "Face": "Front",
+    ...faceAttributes(card.front)
+  }]
+}).flat();
+
+fs.writeFileSync(outfile, stringify(csvCards, { header: true }));

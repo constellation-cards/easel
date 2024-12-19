@@ -23,13 +23,14 @@
           name = "constellation-cards-easel";
           nativeBuildInputs = easeldeps;
           src = self;
-          npmDepsHash = "sha256-w5jPeg4NaHIziaY18k1HMYPPLd7xLC9/MJcJ4ERCMWE=";
+          npmDepsHash = "sha256-VkrqBHgglOvoGqMtgoffIO+4N68YWOBwnWORYdN5qXI=";
           installPhase = ''
             mkdir $out
-            cp -r out/* $out/
-            cp node_modules/@constellation-cards/cards/cards.json $out/
-            node out-tex.js
+            npm run out-json $out/cards.json
+            npm run out-tex $out/cards.json cards.tex
+            npm run out-csv $out/cards.json $out/cards.csv
             context cards.tex --purgeall
+            cp -r out/* $out/
             cp cards.pdf $out/
           '';
         };

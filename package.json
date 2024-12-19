@@ -6,7 +6,10 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "out-json": "tsx out-json.ts",
+    "out-tex": "node out-tex.js",
+    "out-csv": "node out-csv.js"
   },
   "dependencies": {
     "next": "15.0.3",
@@ -14,12 +17,14 @@
     "react-dom": "19.0.0-rc-66855b96-20241106"
   },
   "devDependencies": {
+    "@types/ejs": "^3.1.5",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^20",
     "@types/ramda": "^0.30.2",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "bulma": "^1.0.2",
+    "csv-stringify": "^6.5.2",
     "ejs": "^3.1.10",
     "eslint": "^8",
     "eslint-config-next": "15.0.3",
@@ -28,6 +33,7 @@
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
     "sass": "^1.81.0",
+    "tsx": "^4.19.2",
     "typescript": "^5"
   }
 }
