@@ -3,7 +3,7 @@ import {
   ConstellationCardFace,
   ConstellationCardUid,
 } from "@/cards";
-import { cardsMap, description, stacksMap } from "./helper";
+import { cardsMap, decksMap, description, stacksMap } from "./helper";
 import React from "react";
 import Link from "next/link";
 
@@ -18,6 +18,7 @@ function CardViewFace({
   card: ConstellationCard;
   face: ConstellationCardFace;
 }) {
+  const allDecks = React.useMemo(() => decksMap(), []);
   const allStacks = React.useMemo(() => stacksMap(), []);
   return (
     <div className="card">
@@ -26,9 +27,12 @@ function CardViewFace({
           <Link href={`/cards/${card.uid}`}>{face.name}</Link>
         </h2>
         <h4 className="subtitle">
+          <Link href={`/decks/${card.deck}`}>{allDecks[card.deck].name}</Link>
+          &nbsp;|&nbsp;
           <Link href={`/stacks/${card.stack}`}>
             {allStacks[card.stack].name}
           </Link>
+          {card.quantity > 1 ? ` | x${card.quantity}` : <></>}
         </h4>
         <div className="content">
           <p>{face.flavor}</p>

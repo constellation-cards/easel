@@ -1,8 +1,10 @@
 import {
   ConstellationCard,
+  ConstellationCardDeck,
   ConstellationCardStack,
   ConstellationCardUid,
   getCards,
+  getDecks,
   getStacks,
 } from "@/cards";
 import fs from "fs";
@@ -19,6 +21,16 @@ export function cardsMap(): Record<ConstellationCardUid, ConstellationCard> {
     mapObject[card.uid] = card;
     return mapObject;
   }, {} as Record<ConstellationCardUid, ConstellationCard>);
+}
+
+export function decksMap(): Record<
+  ConstellationCardUid,
+  ConstellationCardDeck
+> {
+  return getDecks().reduce((mapObject, deck) => {
+    mapObject[deck.uid] = deck;
+    return mapObject;
+  }, {} as Record<ConstellationCardUid, ConstellationCardDeck>);
 }
 
 export function stacksMap(): Record<
