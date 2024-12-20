@@ -5,15 +5,16 @@ stacks:
       where certain people or activities are drawn to each other.
       Neighborhoods are either flourishing or struggling.
 templates:
-  - template: &neighborhood-front
+  - template: &neighborhood
       deck: CITY
       stack: City (Neighborhood)
+  - template: &neighborhood-front
       rule: Flip to see the struggling version of this neighborhood
   - template: &neighborhood-back
-      stack: City (Neighborhood)
       rule: Flip to see the flourishing version of this neighborhood
 cards:
-  - front: &Boulevard
+  - <<: *neighborhood
+    front: &Boulevard
       <<: *neighborhood-front
       name: The Boulevard
       description: >
@@ -41,7 +42,8 @@ cards:
         - How new is the Boulevard compared to the city overall?
         - How does its current state make people feel?
         - Is anyone trying to attract new visitors? To stop them?
-  - front: &Harbor
+  - <<: *neighborhood
+    front: &Harbor
       <<: *neighborhood-front
       name: The Harbor
       description: >
@@ -65,7 +67,8 @@ cards:
         - What modes of transportation are found here?
         - Are conditions poor because of the city, or something outside?
         - Who could help? Why don't they?
-  - front: &Marketplace
+  - <<: *neighborhood
+    front: &Marketplace
       <<: *neighborhood-front
       name: The Marketplace
       description: >
@@ -89,7 +92,8 @@ cards:
         - Does the neighborhood have the wrong goods, or the wrong buyers?
         - What hidden assets might still be found here?
         - Who profits from the current situation? Who does not?
-  - front: &Sanctuary
+  - <<: *neighborhood
+    front: &Sanctuary
       <<: *neighborhood-front
       name: The Sanctuary
       description: >
@@ -115,7 +119,8 @@ cards:
         - Who lives here? Why do they live in the Sanctuary specifically?
         - Is the Sanctuary keeping the outside out, or the inhabitants in?
         - Who rules here? Who suffers?
-  - front: &Temple
+  - <<: *neighborhood
+    front: &Temple
       <<: *neighborhood-front
       name: The Temple
       description: >
@@ -140,7 +145,8 @@ cards:
         - What belief system or systems were practiced here?
         - What motive, such as greed, corruption, or apathy, stands against them?
         - How has a lack of faith helped, or hurt?
-  - front: &Underground
+  - <<: *neighborhood
+    front: &Underground
       <<: *neighborhood-front
       name: The Underground
       description: >
@@ -163,7 +169,8 @@ cards:
         - How much of the Underground still functions? What has broken down?
         - What social ills, like disease or poverty, have taken hold?
         - Who lives here, and how are they suffering?
-  - front: &Uptown
+  - <<: *neighborhood
+    front: &Uptown
       <<: *neighborhood-front
       name: Uptown
       description: >
@@ -189,7 +196,8 @@ cards:
         - What political or social systems once supported the neighborhood?
         - Do the inhabitants still believe they hold real power?
         - What will they do to get it back?
-  - front: &Warren
+  - <<: *neighborhood
+    front: &Warren
       <<: *neighborhood-front
       name: The Warren
       description: >

@@ -29,14 +29,16 @@ presets:
   - name: New Empty Spread
     description: Create a new empty spread
 templates:
-  - template: &template
+  - template: &corerule
+      deck: CORE
       stack: Core Rules
-  - template: &agendafront
+  - template: &agenda
+      deck: CORE
       stack: Core Rules (Agenda)
   - template: &crisis
+      deck: CORE
       stack: Core Rules (Crisis)
   - template: &agendaback
-      <<: *agendafront
       description: >
         During play, you can speak from one of several agendas.
 
@@ -49,8 +51,8 @@ templates:
 
         If you've been assigned an agenda, you are bound to speak from it.
 cards:
-  - template: &principal
-      <<: *agendafront
+  - <<: *agenda
+    template: &principal
       name: The Principal
       rule: Whoever plays this card is a principal. Flip for additional rules.
     front:
@@ -67,11 +69,11 @@ cards:
         - Look for opportunities to advance your story
         - Support other players' stories
     back:
-      <<: *agendaback
       <<: *principal
+      <<: *agendaback
     quantity: 6
-  - template: &facilitator
-      <<: *agendafront
+  - <<: *agenda
+    template: &facilitator
       name: The Facilitator
       rule: Whoever plays this card is the facilitator. Flip for additional rules.
     front:
@@ -87,10 +89,10 @@ cards:
         - toward a player who has an interesting idea
         - away from a player who finished a cool action
     back:
-      <<: *agendaback
       <<: *facilitator
-  - template: &lorekeeper
-      <<: *agendafront
+      <<: *agendaback
+  - <<: *agenda
+    template: &lorekeeper
       name: The Lorekeeper
       rule: Whoever plays this card is the lorekeeper. Flip for additional rules.
     front:
@@ -105,10 +107,10 @@ cards:
         - When did the dragons disappear?
         - How does magic work, anyway?
     back:
-      <<: *agendaback
       <<: *lorekeeper
-  - template: &referee
-      <<: *agendafront
+      <<: *agendaback
+  - <<: *agenda
+    template: &referee
       name: The Referee
       rule: Whoever plays this card is the referee. Flip for additional rules.
     front:
@@ -124,10 +126,10 @@ cards:
         - How should a given card's text be interpreted?
         - Is it time to create a new card?
     back:
-      <<: *agendaback
       <<: *referee
-  - template: &storyteller
-      <<: *agendafront
+      <<: *agendaback
+  - <<: *agenda
+    template: &storyteller
       name: The Storyteller
       rule: Whoever plays this card is the storyteller. Flip for additional rules.
     front:
@@ -143,10 +145,10 @@ cards:
         - Don't steal agency or spotlight from the PCs
         - Initiate actions that prompt a PC response
     back:
-      <<: *agendaback
       <<: *storyteller
-  - template: &challenges
-      <<: *template
+      <<: *agendaback
+  - <<: *corerule
+    template: &challenges
       name: Challenges
       rule: Flip for additional rules.
     front:
@@ -174,8 +176,8 @@ cards:
         - You're fighting or fleeing a dangerous monster
         - You're working with complex magic or technology that might malfunction
         - You're confronting an emotionally fraught situation
-  - front: &xcard
-      <<: *template
+  - <<: *corerule
+    front: &xcard
       name: X-Card
       img: x.png
       description: >
@@ -199,8 +201,8 @@ cards:
         from all of you! Please help make this game fun for everyone.
         Thank you!"
       rule: Lay this card at the center of the play area
-  - template: &uncertain
-      <<: *crisis
+  - <<: *crisis
+    template: &uncertain
       name: Uncertain Crisis
       rule: Define the scope of the crisis, and flip this card
     front:
@@ -222,8 +224,8 @@ cards:
         You may flip shared cards (e.g. Plot cards)
         or draw/pick a new card (e.g. Condition card, Random oracle card).
       rule: Flip this card when the crisis is past
-  - template: &gauntlet
-      <<: *crisis
+  - <<: *crisis
+    template: &gauntlet
       name: Gauntlet Crisis
       rule: Define the scope of the crisis, and flip this card
     front:
@@ -247,8 +249,8 @@ cards:
         You may flip group cards (e.g. Plot cards)
         or draw/pick a new card (e.g. Condition card, Random oracle card).
       rule: Flip this card when the crisis is past
-  - template: &overwhelming
-      <<: *crisis
+  - <<: *crisis
+    template: &overwhelming
       name: Overwhelming Crisis
       rule: Define the scope of the crisis, and flip this card
     front:

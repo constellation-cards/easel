@@ -13,15 +13,15 @@ stacks:
       - user
 templates:
   - template: &template
+      deck: CORE
       stack: Character (Role)
   - template: &tfront
-      <<: *template
       rule: Flip to get a hit.
   - template: &tback
-      <<: *template
       rule: Flip when a prompt is narrated by anyone.
 cards:
-  - front: &Dreamer
+  - <<: *template
+    front: &Dreamer
       <<: *tfront
       name: Dreamer
       description: "Tomorrow beckons, if you can fix today. You can't change the world alone. But you aren't, are you?"
@@ -37,7 +37,8 @@ cards:
         - Reject the real, denounce the realist
         - Forget that you have friends
         - Lose sight of your dream for a time
-  - front: &Guardian
+  - <<: *template
+    front: &Guardian
       <<: *tfront
       name: Guardian
       description: You feel responsible for something or someone else. Their need propels you.
@@ -53,7 +54,8 @@ cards:
         - Assert your authority
         - Cast suspicion too widely
         - Shut down your feelings or shut out your charge
-  - front: &Opportunist
+  - <<: *template
+    front: &Opportunist
       <<: *tfront
       name: Opportunist
       description: Life is unpredictable. When an opening comes, seize it. When a chance comes, take it.
@@ -69,7 +71,8 @@ cards:
         - Kick someone when they're down
         - Betray a trust
         - Let someone else pay the price
-  - front: &Performer
+  - <<: *template
+    front: &Performer
       <<: *tfront
       name: Performer
       description: Through actions and words, you entertain, persuade, or transform people around you.
@@ -85,7 +88,8 @@ cards:
         - Outshine or embarrass someone important
         - Draw unwanted attention
         - Provoke an unintended reaction
-  - front: &Quester
+  - <<: *template
+    front: &Quester
       <<: *tfront
       name: Quester
       description: A vow, an ideal, a promise, a vision, a mission. Something drives you unstoppably onward.
@@ -101,7 +105,8 @@ cards:
         - Waver in your dedication to your quest
         - Shut others out of assisting you
         - Ignore mundane needs to focus on your quest
-  - front: &Rebel
+  - <<: *template
+    front: &Rebel
       <<: *tfront
       name: Rebel
       description: Your power, presentation, reputation, or history cause common folk to fear or reject you.
@@ -117,7 +122,8 @@ cards:
         - Make everything worse for yourself or an ally
         - Fall prey to temptation or darkness
         - Spark conflict or dissent
-  - front: &Soldier
+  - <<: *template
+    front: &Soldier
       <<: *tfront
       name: Soldier
       description: "Life is struggle. Everyone has to fight, all the time. What do you fight for?"
@@ -133,7 +139,8 @@ cards:
         - Lash out at an easy target
         - Use your power selfishly
         - Dismiss the peaceful alternative
-  - front: &Synthesist
+  - <<: *template
+    front: &Synthesist
       <<: *tfront
       name: Synthesist
       description: You create, fix, and remix.

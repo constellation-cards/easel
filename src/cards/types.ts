@@ -96,10 +96,6 @@ export interface ConstellationCardFace {
    * Cards can optionally have a rule at the bottom
    */
   rule: string | undefined;
-
-  // Only used for import
-  deck?: string;
-  stack?: string;
 }
 
 export interface ConstellationCard {

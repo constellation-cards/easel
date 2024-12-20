@@ -87,8 +87,8 @@ function extractCards(data: ConstellationCard[]): ConstellationCard[] {
   return map(
     (record) =>
       mergeRight(cardTemplate, {
-        deck: record.front?.deck || record.back?.deck || "CORE",
-        stack: record.front?.stack || record.back?.stack,
+        deck: record.deck,
+        stack: record.stack,
         front: extractFace(record.front),
         back: extractFace(record.back),
         quantity: record.quantity || cardTemplate.quantity,

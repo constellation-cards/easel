@@ -5,15 +5,16 @@ stacks:
       between neighborhoods.
       Personalities can be individuals, or perhaps small groups of like-minded individuals.
 templates:
-  - template: &personality-front
+  - template: &personality
       deck: CITY
       stack: City (Personality)
+  - template: &personality-front
       rule: Flip to see the vulnerable version of this personality
   - template: &personality-back
-      stack: City (Personality)
       rule: Flip to see the dominant version of this personality
 cards:
-  - front: &Activist
+  - <<: *personality
+    front: &Activist
       <<: *personality-front
       name: The Activist
       description: >
@@ -35,7 +36,8 @@ cards:
         - What are the Activist's goals?
         - Who do they represent? Who do they oppose?
         - How far will they go? Have they gone?
-  - front: &Factotum
+  - <<: *personality
+    front: &Factotum
       <<: *personality-front
       name: The Factotum
       description: >
@@ -58,7 +60,8 @@ cards:
         - Who do they serve? Why?
         - Between the Factotum and their leader, who really rules?
         - What does the Factotum personally want?
-  - front: &Hardliner
+  - <<: *personality
+    front: &Hardliner
       <<: *personality-front
       name: The Hardliner
       description: >
@@ -82,7 +85,8 @@ cards:
         - What motivates the Hardliner to defend the status quo?
         - How sincere are their stated objections to change?
         - How have their beliefs changed over time?
-  - front: &Mediator
+  - <<: *personality
+    front: &Mediator
       <<: *personality-front
       name: The Mediator
       description: >
@@ -106,7 +110,8 @@ cards:
         - How does the Mediator achieve their ends?
         - What sacrifices must they make?
         - What is their real goal?
-  - front: &Newcomer
+  - <<: *personality
+    front: &Newcomer
       <<: *personality-front
       name: The Newcomer
       description: >
@@ -130,7 +135,8 @@ cards:
         - What makes the Newcomer significant?
         - What makes them stand out from how the city usually does things?
         - Who has their ear? Who seeks it?
-  - front: &Plotter
+  - <<: *personality
+    front: &Plotter
       <<: *personality-front
       name: The Plotter
       description: >
@@ -152,7 +158,8 @@ cards:
         - What personal holds or secrets enable the Plotter's schemes?
         - Who works with them? Why?
         - What is their ultimate goal - profit, progress, or something else?
-  - front: &Scion
+  - <<: *personality
+    front: &Scion
       <<: *personality-front
       name: The Scion
       description: >
@@ -176,7 +183,8 @@ cards:
         - What is the Scion's place in the city and its history?
         - What secrets does their legacy hold?
         - How have they used their position?
-  - front: &Turncoat
+  - <<: *personality
+    front: &Turncoat
       <<: *personality-front
       name: The Turncoat
       description: >

@@ -13,15 +13,15 @@ stacks:
       - key
 templates:
   - template: &template
+      deck: CORE
       stack: Character (Focus)
   - template: &tfront
-      <<: *template
       rule: Flip to get a hit.
   - template: &tback
-      <<: *template
       rule: Flip when a prompt is narrated by anyone.
 cards:
-  - front: &Courage
+  - <<: *template
+    front: &Courage
       <<: *tfront
       name: Courage
       flavor: >
@@ -49,7 +49,8 @@ cards:
         - Boast of deeds undone or make promises you can't fulfill
         - Run away to avoid getting hurt, physically or emotionally
         - Seek glory or vengeance
-  - front: &Charm
+  - <<: *template
+    front: &Charm
       <<: *tfront
       name: Charm
       flavor: >
@@ -76,7 +77,8 @@ cards:
         - Show off needlessly
         - Push things for the sake of pushing
         - Take advantage of someone's emotions
-  - front: &Instinct
+  - <<: *template
+    front: &Instinct
       <<: *tfront
       name: Instinct
       flavor: >
@@ -103,7 +105,8 @@ cards:
         - Interrupt a plan mid-execution
         - Misjudge someone's intentions or actions
         - Screw something up by impulsively acting
-  - front: &Magic
+  - <<: *template
+    front: &Magic
       <<: *tfront
       name: Magic
       flavor: >
@@ -130,7 +133,8 @@ cards:
         - Face a cost you can't easily or immediately pay
         - Supply a rare material component or perform a ritual at specific place and time
         - Suffer a side effect or curse
-  - front: &Secrets
+  - <<: *template
+    front: &Secrets
       <<: *tfront
       name: Secrets
       flavor: >
@@ -157,7 +161,8 @@ cards:
         - Endure distrust from those around you
         - Reveal the wrong thing to the wrong person
         - Give yourself away at an inopportune moment
-  - front: &Tech
+  - <<: *template
+    front: &Tech
       <<: *tfront
       name: Tech
       flavor: >
@@ -183,7 +188,8 @@ cards:
         - The gadget has unexpected side effects or fails to work at a key moment
         - A gadget malfunctions or breaks in interesting ways
         - People distrust or avoid your strange science
-  - front: &Training
+  - <<: *template
+    front: &Training
       <<: *tfront
       name: Training
       flavor: >
@@ -211,7 +217,8 @@ cards:
         - Face a problem that requires tools after all
         - Spend time honing yourself instead of accomplishing an important goal
         - Reveal your abilities to someone you'd rather not see them
-  - front: &Wits
+  - <<: *template
+    front: &Wits
       <<: *tfront
       name: Wits
       flavor: >

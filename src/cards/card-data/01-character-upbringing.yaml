@@ -13,15 +13,15 @@ stacks:
       - home
 templates:
   - template: &template
+      deck: CORE
       stack: Character (Upbringing)
   - template: &tfront
-      <<: *template
       rule: Flip to get a hit.
   - template: &tback
-      <<: *template
       rule: Flip when a prompt is narrated by anyone.
 cards:
-  - front: &Cosmopolitan
+  - <<: *template
+    front: &Cosmopolitan
       <<: *tfront
       name: Cosmopolitan
       flavor: >
@@ -47,7 +47,8 @@ cards:
         - Overestimate your own wisdom or experience
         - Lose focus of people as individuals
         - Treat one person as representative of a whole group
-  - front: &Industrious
+  - <<: *template
+    front: &Industrious
       <<: *tfront
       name: Industrious
       flavor: >
@@ -75,7 +76,8 @@ cards:
         - Sacrifice tomorrow's hopes for today's needs
         - Demand someone else live up to your work ethic
         - Lose sight of something important
-  - front: &Insular
+  - <<: *template
+    front: &Insular
       <<: *tfront
       name: Insular
       flavor: >
@@ -103,7 +105,8 @@ cards:
         - Violate unspoken rules or cultural taboos
         - Cause conflict through misunderstanding
         - Fall back on questionable assumptions
-  - front: &Mercantile
+  - <<: *template
+    front: &Mercantile
       <<: *tfront
       name: Mercantile
       flavor: >
@@ -133,7 +136,8 @@ cards:
         - Compromise a principle or ideal for expedience
         - Put a price on service
         - Treat people as assets or commodities
-  - front: &Solitary
+  - <<: *template
+    front: &Solitary
       <<: *tfront
       name: Solitary
       flavor: >
@@ -163,7 +167,8 @@ cards:
         - Accumulate emotional debt
         - Keep your reservations unspoken
         - Leave others behind to fend for themselves
-  - front: &Strict
+  - <<: *template
+    front: &Strict
       <<: *tfront
       name: Strict
       flavor: >
@@ -190,7 +195,8 @@ cards:
         - Refuse to adapt your code to new or difficult situations
         - See the world through a narrow lens
         - Disdain or punish those who don't conform to your expectations
-  - front: &Underclass
+  - <<: *template
+    front: &Underclass
       <<: *tfront
       name: Underclass
       flavor: >
@@ -218,7 +224,8 @@ cards:
         - Lash out at threats to your ego
         - Build yourself up in the eyes of the impressionable
         - Run afoul of those in power
-  - front: &Unfettered
+  - <<: *template
+    front: &Unfettered
       <<: *tfront
       name: Unfettered
       flavor: >

@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   env: {
     NEXTJS_ROOT: __dirname,
   },
+  sassOptions: {
+    silenceDeprecations: ["legacy-js-api"],
+  },
 };
 
 export default nextConfig;

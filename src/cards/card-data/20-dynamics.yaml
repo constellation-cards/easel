@@ -30,15 +30,16 @@ presets:
         quantity: 1
         flipRule: random
 templates:
-  - template: &dynamic-front
+  - template: &dynamic
       deck: CITY
       stack: City (Dynamic)
+  - template: &dynamic-front
       rule: Flip to see the unstable version of this dynamic
   - template: &dynamic-back
-      stack: City (Dynamic)
       rule: Flip to see the stable version of this dynamic
 cards:
-  - front: &Artistic
+  - <<: *dynamic
+    front: &Artistic
       <<: *dynamic-front
       name: Artistic
       description: >
@@ -63,7 +64,8 @@ cards:
         - What forms of art exist in the city?
         - How does the city view those who make art?
         - Who is interested in collecting or commissioning art?
-  - front: &Criminal
+  - <<: *dynamic
+    front: &Criminal
       <<: *dynamic-front
       name: Criminal
       description: >
@@ -88,7 +90,8 @@ cards:
         - What kinds of laws exist? Are they fair?
         - Who enforces those laws? How strictly?
         - How does the public view the criminal element?
-  - front: &Commercial
+  - <<: *dynamic
+    front: &Commercial
       <<: *dynamic-front
       name: Commercial
       description: >
@@ -115,7 +118,8 @@ cards:
         - Who gains from the instability? Who loses?
         - Where else can supply, demand, or labor be found instead?
         - How are people coping?
-  - front: &Esoteric
+  - <<: *dynamic
+    front: &Esoteric
       <<: *dynamic-front
       name: Esoteric
       description: >
@@ -138,7 +142,8 @@ cards:
         - What kinds of things are exchanged?
         - What kind of people work with them?
         - How does the city view such people?
-  - front: &External
+  - <<: *dynamic
+    front: &External
       <<: *dynamic-front
       name: External
       description: >
@@ -160,7 +165,8 @@ cards:
         - What is the external?
         - Is the city importing or exporting it?
         - Who benefits? Who doesn't?
-  - front: &Industrial
+  - <<: *dynamic
+    front: &Industrial
       <<: *dynamic-front
       name: Industrial
       description: >
@@ -183,7 +189,8 @@ cards:
         - What is being made? Processed metals, medicines, tools?
         - How is it being used? By whom? For what?
         - Who wants these things? Who doesn't them to be made?
-  - front: &Political
+  - <<: *dynamic
+    front: &Political
       <<: *dynamic-front
       name: Political
       description: >
@@ -208,7 +215,8 @@ cards:
         - Who is agitating for change? Who holds the line?
         - What outside influences are present? Who do they support?
         - Is the struggle physically peaceful or violent?
-  - front: &Social
+  - <<: *dynamic
+    front: &Social
       <<: *dynamic-front
       name: Social
       description: >

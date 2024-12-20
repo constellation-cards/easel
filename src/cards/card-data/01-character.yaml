@@ -12,9 +12,10 @@ presets:
         quantity: 1
         flipRule: front
 cards:
-  - front: &characters
+  - deck: CORE
+    stack: Core Rules
+    front: &characters
       name: Character Cards
-      stack: Core Rules
       backgroundImage: character
       rule: Other side is identical
       description: >

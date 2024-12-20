@@ -8,18 +8,18 @@ stacks:
       - heart
 templates:
   - template: &template
+      deck: CORE
       stack: Condition
+      quantity: 6
       NOTES:
         - is how the condition limits the fiction
         - I want to know how that changes the fictional situation for your character moving forward.
   - template: &tfront
-      <<: *template
       rule: Flip to worsen the condition and get a hit. Discard by spending a scene attending to the condition.
   - template: &tback
-      <<: *template
       rule: Discard by spending downtime attending to the condition.
 cards:
-  - front: &conditions
+  - front:
       name: Condition Cards
       stack: Core Rules
       backgroundImage: condition
@@ -47,7 +47,8 @@ cards:
         - "You're already Hurt, but you can worsen it to Wounded to launch a final desperate attack"
         - "Spend a scene being healed by a priestess to discard Hurt, or a week of downtime doing odd jobs to discard Indebted"
       rule: Flip to see rules
-  - front:
+  - <<: *template
+    front:
       <<: *tfront
       name: Hurt
       flavor: >
@@ -76,8 +77,8 @@ cards:
         - You suffered major blood loss
         - You broke a bone
         - You were pierced by arrows, spears, or claws
-    quantity: 6
-  - front:
+  - <<: *template
+    front:
       <<: *tfront
       name: Weakened
       flavor: >
@@ -104,8 +105,8 @@ cards:
         - Serious illness or poison
         - Delerium or hallucinations
         - Burns or frostbite
-    quantity: 6
-  - front:
+  - <<: *template
+    front:
       <<: *tfront
       name: Obliged
       flavor: >
@@ -131,8 +132,8 @@ cards:
         - Carry out illegal or dangerous activities
         - Work with a rival or enemy to achieve a goal
         - Sacrifice comrades or principles to avoid punishment
-    quantity: 6
-  - front:
+  - <<: *template
+    front:
       <<: *tfront
       name: Wanted
       flavor: >
@@ -159,8 +160,8 @@ cards:
         - Wanted posters or official notices
         - Guards raised an alarm
         - You're in enemy territory or surrounded
-    quantity: 6
-  - front:
+  - <<: *template
+    front:
       <<: *tfront
       name: Magicked
       flavor: >
@@ -187,8 +188,8 @@ cards:
       prompts:
         - Misfortune or calamity hounds you
         - A ban against doing some common thing
-    quantity: 6
-  - front:
+  - <<: *template
+    front:
       <<: *tfront
       name: Altered
       flavor: >
@@ -215,8 +216,8 @@ cards:
         - Polymorphed into an animal
         - Changed into a supernatural creature
         - Made undead or demonic
-    quantity: 6
-  - front:
+  - <<: *template
+    front:
       <<: *tfront
       name: Undergeared
       flavor: >
@@ -243,8 +244,8 @@ cards:
         - Stripped of weapons by enemies
         - Magical tools disenchanted
         - Completely without rations or shelter
-    quantity: 6
-  - front:
+  - <<: *template
+    front:
       <<: *tfront
       name: Hindered
       flavor: >
@@ -271,4 +272,3 @@ cards:
         - Temporarily blind or deaf
         - Unable to cast spells or use other special abilities
         - A breakdown or dissociation
-    quantity: 6
