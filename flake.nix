@@ -23,7 +23,7 @@
           name = "constellation-cards-easel";
           nativeBuildInputs = easeldeps;
           src = self;
-          npmDepsHash = "sha256-ZZixwcHOjLIST67Tx5I2veR4CKKap4yen5x2a81sOP0=";
+          npmDepsHash = "sha256-uUtK10SwZvSU3x7z9pyPcPMFinjaLq6DMaJegkXy/Uo=";
           installPhase = ''
             mkdir $out
             npm run out-json $out/cards.json
