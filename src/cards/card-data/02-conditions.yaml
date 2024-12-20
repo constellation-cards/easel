@@ -19,9 +19,10 @@ templates:
   - template: &tback
       rule: Discard by spending downtime attending to the condition.
 cards:
-  - front:
+  - deck: CORE
+    stack: Core Rules
+    front:
       name: Condition Cards
-      stack: Core Rules
       backgroundImage: condition
       description: >
         You can take a condition to get a hit. Describe how.
@@ -36,7 +37,6 @@ cards:
       rule: Flip to see examples
     back:
       name: Condition Examples
-      stack: Core Rules
       backgroundImage: condition
       description: >
         Conditions are a way to achieve success at a cost.
