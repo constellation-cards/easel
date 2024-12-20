@@ -13,6 +13,10 @@
 \constellationtitle{<%- card.back.name -%>}
 \constellationstack{<%- card.stack.name -%>}
 
+<% if (card.back.flavor) { -%>
+\constellationquote{<%- card.back.flavor -%>}
+<% }; -%>
+
 <%- description(card.back.description) -%>
 
 <% if (card.back.prompts) { -%>
@@ -33,6 +37,10 @@
 
 \constellationtitle{<%- card.back.name -%>}
 \constellationstack{<%- card.stack.name -%>}
+
+<% if (card.front.flavor) { -%>
+\constellationquote{<%- card.front.flavor -%>}
+<% }; -%>
 
 <%- description(card.back.description) -%>
 
