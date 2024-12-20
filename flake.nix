@@ -27,10 +27,13 @@
           npmBuildScript = "testbuild";
           installPhase = ''
             mkdir $out
-            npm run out-json $out/cards.json
-            npm run out-tex $out/cards.json cards.tex
-            npm run out-csv $out/cards.json $out/cards.csv
-            context cards.tex --purgeall
+            npm run out-json $out/cards.json               # Generate JSON
+            npm run out-csv $out/cards.json $out/cards.csv # Generate CSV
+            npm run out-tex $out/cards.json cards.tex      # Generate ConTeXt input
+            export OSFONTDIR=$PWD/fonts                    # Set up font config for ConTeXt
+            mtxrun --generate
+            mtxrun --script fonts --reload
+            context cards.tex --purgeall                   # Generate PDF
             cp -r out/* $out/
             cp cards.pdf $out/
           '';
