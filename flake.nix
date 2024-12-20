@@ -24,6 +24,7 @@
           nativeBuildInputs = easeldeps;
           src = self;
           npmDepsHash = "sha256-uUtK10SwZvSU3x7z9pyPcPMFinjaLq6DMaJegkXy/Uo=";
+          npmBuildScript = "testbuild";
           installPhase = ''
             mkdir $out
             npm run out-json $out/cards.json
