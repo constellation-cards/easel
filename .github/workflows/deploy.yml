@@ -1,8 +1,9 @@
-name: "Deploy"
+name: "Deploy Easel"
 
 on:
   pull_request:
   push:
+    branches: [main]
 
 env:
   BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
