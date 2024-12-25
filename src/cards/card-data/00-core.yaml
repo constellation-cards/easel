@@ -181,7 +181,7 @@ cards:
       prompts:
         - A Condition card you took would interfere with your action?
         - An enemy makes a powerful or unexpected move of its own?
-        - A lurking danger in the scene asserts itself, or an existing danger is escalated?
+        - A new danger appears, or an existing danger is escalated?
         - The risks inherent in some difficult or complex action come into play?
   - <<: *corerule
     front: &xcard
