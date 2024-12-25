@@ -65,7 +65,7 @@ const cardTemplate: ConstellationCard = {
 
 function toid(input: string): string {
   return slugify(input, {
-    remove: /[\(\)]*/,
+    remove: /[\(\)\?]*/,
     lower: true,
   });
 }
