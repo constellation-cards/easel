@@ -10,6 +10,7 @@ on:
 
 env:
   BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+  PR_NUMBER: ${{ github.event.number }}
 
 jobs:
   deploy:
@@ -38,12 +39,15 @@ jobs:
           mkdir out
           cp -r result/* out
           prod_flag=""
+          deploy_alias=""
           if [ "$BRANCH_NAME" = "main" ]; then prod_flag="--prod"; fi
+          if [ "$PR_NUMBER" != "" ]; then deploy_alias="--alias==pr-$PR_NUMBER"; fi
           netlify deploy \
             --dir out \
             --site ${{ secrets.NETLIFY_SITE_ID }} \
             --auth ${{ secrets.NETLIFY_API_TOKEN }} \
             $prod_flag \
+            $deploy_alias \
             2>&1 | tee deploy_output.txt
       - name: Generate URL Preview
         id: url_preview
