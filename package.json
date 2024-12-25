@@ -11,7 +11,8 @@
     "out-json": "tsx out-json.ts",
     "out-tex": "node out-tex.js",
     "out-csv": "node out-csv.js",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "husky"
   },
   "dependencies": {
     "next": "15.0.3",
@@ -31,6 +32,7 @@
     "ejs": "^3.1.10",
     "eslint": "^8",
     "eslint-config-next": "15.0.3",
+    "husky": "^9.1.7",
     "jest": "^29.7.0",
     "js-yaml": "^4.1.0",
     "ramda": "^0.30.1",
