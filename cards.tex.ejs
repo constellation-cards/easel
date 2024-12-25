@@ -35,18 +35,18 @@
 
 % Front
 
-\constellationtitle{<%- card.back.name -%>}
-\constellationstack{<%- card.stack.name -%>}
+\constellationtitle{<%- card.front.name -%>}
+\constellationstack{<%- card.front.name -%>}
 
 <% if (card.front.flavor) { -%>
 \constellationquote{<%- card.front.flavor -%>}
 <% }; -%>
 
-<%- description(card.back.description) -%>
+<%- description(card.front.description) -%>
 
-<% if (card.back.prompts) { -%>
+<% if (card.front.prompts) { -%>
 \startitemize[nowhite]
-<% card.back.prompts.forEach(function(prompt) { -%>
+<% card.front.prompts.forEach(function(prompt) { -%>
 \item <%- prompt %>
 <% }); -%>
 \stopitemize
@@ -54,7 +54,7 @@
 
 \vfill
 
-\constellationrule{BACK: <%- card.back.rule -%>}
+\constellationrule{FRONT: <%- card.front.rule -%>}
 
 \page
 
