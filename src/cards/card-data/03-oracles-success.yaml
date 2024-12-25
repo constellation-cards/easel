@@ -17,12 +17,12 @@ templates:
         name: Random Outcome
         description: >
           You can choose to draw a card of this type
-          to see if you meet a challenge.
+          to see if you pass a What If.
 
-          The card will suggest ways in which the challenge was met.
+          The card will suggest ways in which the What If was satisfied.
           You can use one of these, or make up your own.
           If a card indicates that you missed,
-          you may not try to meet the challenge in other ways.
+          you may not try to pass the What If in other ways.
 
           You may adjust the ratio
           of hit or miss cards in this stack

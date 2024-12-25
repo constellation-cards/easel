@@ -148,34 +148,41 @@ cards:
       <<: *storyteller
       <<: *agendaback
   - <<: *corerule
-    template: &challenges
-      name: Challenges
+    template: &whatif
+      name: What If?
       rule: Flip for additional rules.
     front:
-      <<: *challenges
+      <<: *whatif
       description: >
-        Any player may challenge a PC's action if
-        success or failure are both interesting.
+        When another player narrates a PC's action,
+        such as "I attack the ogre",
+        you can ask "what if...?"
+        You must propose an interesting alternative outcome,
+        such as "what if the ogre smashes you across the room?"
 
-        When your PC is challenged, you must generate a hit to meet it,
-        like flipping a character card.
-        If you don't meet a challenge,
-        your PC's intentions are thwarted or complications arise.
+        If anyone else in the group accepts the What If,
+        and no player vetoes it, the original player must
+        get a Hit for their narration to prevail.
+        They can also opt to accept the What If.
 
-        The challenge must suggest consequences for failure.
-        "Or else nothing happens" is not a challenge.
-        The same action cannot be challenged multiple times.
+        What Ifs can pre-empt the action ("your attack doesn't land, the ogre hits you")
+        or add to it ("your attack lands, and the ogre counters").
     back:
-      <<: *challenges
+      <<: *whatif
       description: >
-        Use challenges to tune the difficulty of a situation.
-        A risky combat scene might pose several challenges.
-        A simple social encounter might pose only one challenge.
+        Other players can suggest ways to build on the What If,
+        or propose their own alternatives. Only one What If can prevail.
+
+        Use What Ifs to make characters work overcome threats, or
+        introduce complications to their actions. What Ifs can
+        pre-empt the original action, or add an outcome after it finishes.
+
+        What If...
       prompts:
-        - You're navigating rough terrain, and might fall or lose equipment
-        - You're fighting or fleeing a dangerous monster
-        - You're working with complex magic or technology that might malfunction
-        - You're confronting an emotionally fraught situation
+        - A Condition card you took would interfere with your action?
+        - An enemy makes a powerful or unexpected move of its own?
+        - A new danger appears, or an existing danger is escalated?
+        - The risks inherent in some difficult or complex action come into play?
   - <<: *corerule
     front: &xcard
       name: X-Card
