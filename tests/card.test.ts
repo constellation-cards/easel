@@ -4,7 +4,7 @@ function failjson(card: ConstellationCard) {
   throw new Error(JSON.stringify(card, null, 2));
 }
 
-describe("Stacks", () => {
+describe("Cards", () => {
   let cards: ConstellationCard[];
 
   beforeAll(() => {
