@@ -1,5 +1,5 @@
 decks:
-  - name: ENCOUNTER
+  - name: ENCOUNTERS
     description: >
       The Encounter deck is for building confrontations with challenging creatures
       or situations. By dealing two random Encounter cards and an Emotion card,
@@ -26,7 +26,7 @@ presets:
         flipRule: back
 templates:
   - template: &template
-      deck: ENCOUNTER
+      deck: ENCOUNTERS
       stack: Encounter
   - template: &tfront
       rule: Flip to see ways to meet the encounter's challenges.

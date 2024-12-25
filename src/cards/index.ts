@@ -2,6 +2,8 @@ import crypto from "crypto";
 import fs from "fs";
 import yaml from "js-yaml";
 import path from "path";
+const slugify = require("slugify");
+
 import {
   append,
   assoc,
@@ -62,11 +64,25 @@ const cardTemplate: ConstellationCard = {
   quantity: 1,
 };
 
-function idForObject(
-  obj: ConstellationCardDeck | ConstellationCardStack | ConstellationCard
-): string {
-  const content = JSON.stringify(obj);
-  return crypto.createHash("md5").update(content).digest("hex");
+function toid(input: string): string {
+  return slugify(input, {
+    remove: /[\(\)]*/,
+    lower: true,
+  });
+}
+
+function idForDeck(obj: ConstellationCardDeck): string {
+  return toid(obj.name);
+}
+
+function idForStack(obj: ConstellationCardStack): string {
+  return toid(obj.name);
+}
+
+function idForCard(obj: ConstellationCard): string {
+  return obj.front.name === obj.back.name
+    ? toid(obj.front.name)
+    : `${toid(obj.front.name)}-${toid(obj.back.name)}`;
 }
 
 function extractDecks(data: ConstellationCardDeck[]): ConstellationCardDeck[] {
@@ -141,17 +157,12 @@ function cardFiles(): string[] {
   return yamlPaths;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function addIds(objects: any[]): any[] {
-  return map((obj) => assoc("uid", idForObject(obj), obj), objects);
-}
-
 function addIdsToEverything(data: YamlData) {
   return {
-    decks: addIds(data.decks) as ConstellationCardDeck[],
-    stacks: addIds(data.stacks) as ConstellationCardStack[],
+    decks: map((obj) => assoc("uid", idForDeck(obj), obj), data.decks),
+    stacks: map((obj) => assoc("uid", idForStack(obj), obj), data.stacks),
     presets: data.presets,
-    cards: addIds(data.cards) as ConstellationCard[],
+    cards: map((obj) => assoc("uid", idForCard(obj), obj), data.cards),
   };
 }
 
