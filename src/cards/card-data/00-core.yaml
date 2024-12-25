@@ -158,12 +158,15 @@ cards:
         such as "I attack the ogre",
         you can ask "what if...?"
         You must propose an interesting alternative outcome,
-        such as "what if the wounded ogre smashes you across the room?"
+        such as "what if the ogre smashes you across the room?"
 
         If anyone else in the group accepts the What If,
         and no player vetoes it, the original player must
         get a Hit for their narration to prevail.
         They can also opt to accept the What If.
+
+        What Ifs can pre-empt the action ("your attack doesn't land, the ogre hits you")
+        or add to it ("your attack lands, and the ogre counters").
     back:
       <<: *whatif
       description: >
@@ -176,10 +179,10 @@ cards:
 
         What If...
       prompts:
-        - A Condition you took affects your action?
-        - An enemy takes one of its own actions?
-        - A logical danger in the scene asserts itself?
-        - A difficult action poses a special challenge?
+        - A Condition card you took would interfere with your action?
+        - An enemy makes a powerful or unexpected move of its own?
+        - A lurking danger in the scene asserts itself, or an existing danger is escalated?
+        - The risks inherent in some difficult or complex action come into play?
   - <<: *corerule
     front: &xcard
       name: X-Card
