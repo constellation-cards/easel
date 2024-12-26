@@ -1,0 +1,157 @@
+stacks:
+  - name: Frame
+    description: >
+      Frame Cards help you start a game without having a specific setting or style of play in mind.
+templates:
+  - template: &frame
+      deck: CORE
+      stack: Frame
+      front:
+        name: Frame
+        description: >
+          Frame cards let you quickly create a game to play,
+          when nobody in the group has any strong ideas.
+          You can think of Frame cards like character cards for the game itself.
+
+          Each player draws one Frame card, either randomly or by shuffling
+          through the available cards.
+          When everyone has drawn, each player picks some specifics based on
+          the card they drew. For example, if the Place and Time card is drawn,
+          what place and what time?
+
+          Frame cards do not dictate the game you play.
+          They are the start of that conversation, not the end of it.
+          Players can freely swap cards, change their minds, etc. once they draw a card.
+        rule: Flip to see the specific Frame. Discard once play begins.
+  - template: &rule Flip to see additional rules. Discard once play begins.
+cards:
+  - <<: *frame
+    back:
+      name: Activity
+      description: >
+        An Activity is whatever the players will typically be doing during the game,
+        at least at first.
+
+        Individual characters could be well suited for the activity,
+        but it's also interesting if they aren't, but must do it anyway.
+      prompts:
+        - Treasure hunting
+        - Escaping powerful enemies
+        - Rescuing people in need
+        - Exploring mysteries
+      rule: *rule
+  - <<: *frame
+    back:
+      name: Setting
+      description: >
+        This is the place & time the game takes place.
+        The game doesn't have to stay here, but it should start here.
+
+        Setting can come with cultural assumptions that players
+        don't know (e.g. personal etiquette), or aren't comfortable with (e.g. racism).
+        Make sure everyone is comfortable with playing in a proposed setting,
+        and explain in detail what's important about the setting to you.
+      prompts:
+        - Edwardian London, 1905
+        - A Wild West with dinosaurs
+        - A mysterious space empire
+        - The ancient past or a ruined future
+      rule: *rule
+  - <<: *frame
+    back:
+      name: Perspective
+      description: >
+        Perspective is whose side of a conflict we're seeing.
+        In a war between two sides, each side is a Perspective, but so
+        are the innocent civilians caught in the middle,
+        or the visitors from uninvolved nations trapped by the fighting.
+
+        Not every player needs to play a member of the Perspective group,
+        but that group is who the group will most often interact with.
+      prompts:
+        - Partisans and patriots in a conflict
+        - Oppressed or neglected people
+        - People uncovering or concealing a secret
+        - Travelers experiencing local events
+      rule: *rule
+  - <<: *frame
+    back:
+      name: Scope
+      description: >
+        Scope is the outer boundary of the game's action and conflicts.
+        If you tell a story about WW2, the scope could be a single unit of soldiers,
+        the entire Pacific conflict, the siege of a single city in the Ardennes,
+        or anything in between.
+      prompts:
+        - A single town or city
+        - A specific group of people
+        - A trade route or geographic region
+        - A whole world or planet
+      rule: *rule
+  - <<: *frame
+    back:
+      name: Genre
+      description: >
+        Genre is any family of work connected in style or form.
+        Genres come with expectations and tropes. For example,
+        science fiction often comes with gadgets that save the day,
+        while in horror it's common for devices like cars and phones to fail.
+
+        Genre is like a lens that colors how we see a story.
+        The same old cabin by the lake could play host to romance,
+        horror, or mystery stories.
+      prompts:
+        - Action/Adventure
+        - Mystery
+        - Romance or Melodrama
+        - Sci-fi or Fantasy
+      rule: *rule
+  - <<: *frame
+    back:
+      name: Mood
+      description: >
+        Mood is the kind of emotion we want the game to elicit.
+        Are we being silly? Are we being ultra-serious?
+        Are we examining qualities of the world as observers,
+        or do we want to immerse ourselves in the world as inhabitants?
+      prompts:
+        - Cheerful vs. Somber
+        - Nostalgic vs. Progressive
+        - Optimistic vs. Pessimistic
+        - Serious vs. Comedic
+      rule: *rule
+  - <<: *frame
+    back:
+      name: Inspiration
+      description: >
+        This is a game based on a specific work, such as Star Wars,
+        Lord of the Rings, Gideon the Ninth, etc.
+        If you are basing a game on works that not every player knows,
+        either be prepared to answer questions,
+        or accept that some players may take the game in directions
+        the original work didn't go.
+      prompts:
+        - What parts of the work do you want to bring in?
+        - What parts do you not care about?
+        - Which players know the inspiration vs. which don't?
+        - What do you feel should be changed about the work? What shouldn't?
+      rule: *rule
+  - <<: *frame
+    back:
+      name: Pole Stars
+      description: >
+        A "Pole Star" is an in-game element (e.g. dragons) or a general topic (e.g. war)
+        that you want the game to be about.
+        The most interesting Pole Star games will have characters who all have
+        different attitudes about the thing,
+        but who have motives to work together despite their differences.
+
+        If most of the players don't care about the Pole Star,
+        or all the players seem to share the same attitude toward it,
+        you might want to pick something else.
+      prompts:
+        - A fictional element you like (dragons, magic, time travel)
+        - An important personal or social topic (crime, poverty)
+        - A contentious event (the coronation of an unpopular ruler)
+        - A moral or ethical concept (responding to tyranny)
+      rule: *rule
