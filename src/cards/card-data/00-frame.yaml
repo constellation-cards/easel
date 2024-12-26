@@ -11,17 +11,13 @@ templates:
         description: >
           Frame cards let you quickly create a game to play,
           when nobody in the group has any strong ideas.
-          You can think of Frame cards like character cards for the game itself.
+          They are like character cards for the game itself.
 
-          Each player draws one Frame card, either randomly or by shuffling
-          through the available cards.
-          When everyone has drawn, each player picks some specifics based on
-          the card they drew. For example, if the Place and Time card is drawn,
-          what place and what time?
-
-          Frame cards do not dictate the game you play.
-          They are the start of that conversation, not the end of it.
-          Players can freely swap cards, change their minds, etc. once they draw a card.
+          Each player draws a random Frame card, or picks a specific one.
+          They then make decisions based on those cards about what to play,
+          and the group discusses what to make of all this.
+          The cards are the start of a conversation, not the end of it -
+          players can draw new cards, change their mind, etc.
         rule: Flip to see the specific Frame. Discard once play begins.
   - template: &rule Flip to see additional rules. Discard once play begins.
 cards:
