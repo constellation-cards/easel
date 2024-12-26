@@ -11,8 +11,6 @@
       let
         pkgs = nixpkgs.legacyPackages.${system};
         easeldeps = with pkgs; [
-          ghostscript
-          graphicsmagick
           nodejs_22
           parallel
           texliveConTeXt
@@ -40,7 +38,11 @@
         };
         devShell = pkgs.mkShell {
           name = "easel";
-          packages = easeldeps;
+          packages = easeldeps ++ (with pkgs; [
+            ghostscript
+            graphicsmagick
+            imagemagick
+          ]);
         };
       }
     );
