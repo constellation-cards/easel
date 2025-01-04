@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Page() {
   return (
     <footer className="footer">
@@ -14,6 +16,9 @@ export default function Page() {
               >
                 Play online: Tabletop Simulator
               </a>
+            </li>
+            <li>
+              <Link href="/tts">Use cards in your own TTS game</Link>
             </li>
             <li>
               <a href="/ConstellationCardsQuickstart.pdf">Quickstart PDF</a>
