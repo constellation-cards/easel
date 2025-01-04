@@ -21,10 +21,11 @@
           name = "constellation-cards-easel";
           nativeBuildInputs = easeldeps;
           src = self;
-          npmDepsHash = "sha256-xa5t8UmxsbMhbBRuKtuz7sGk9qBkfUa8XBeJMnb1IjA=";
+          npmDepsHash = "sha256-NHIVSIUSZjbBQQa+cB/XRgFUDbCybKNVKpE5AhsXcjE=";
           npmBuildScript = "testbuild";
           installPhase = ''
             mkdir $out
+            cp -r out/* $out/
             npm run out-json $out/cards.json               # Generate JSON
             npm run out-csv $out/cards.json $out/cards.csv # Generate CSV
             npm run out-tex $out/cards.json cards.tex      # Generate ConTeXt input
@@ -32,7 +33,6 @@
             mtxrun --generate
             mtxrun --script fonts --reload
             context cards.tex --purgeall                   # Generate PDF
-            cp -r out/* $out/
             cp cards.pdf $out/
           '';
         };
