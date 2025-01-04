@@ -14,6 +14,9 @@
           nodejs_22
           parallel
           texliveConTeXt
+          ghostscript
+          graphicsmagick
+          imagemagick
         ];
       in
       {
@@ -34,15 +37,13 @@
             mtxrun --script fonts --reload
             context cards.tex --purgeall                   # Generate PDF
             cp cards.pdf $out/
+            bash tabletop-simulator.sh
+            cp montage-*.png $out/
           '';
         };
         devShell = pkgs.mkShell {
           name = "easel";
-          packages = easeldeps ++ (with pkgs; [
-            ghostscript
-            graphicsmagick
-            imagemagick
-          ]);
+          packages = easeldeps;
         };
       }
     );
