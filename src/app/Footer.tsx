@@ -5,14 +5,26 @@ export default function Page() {
         <div className="column is-one-quarter">
           <ul>
             <li>
-              <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3080002958" target="_blank">
+              <strong>Playing the Game</strong>
+            </li>
+            <li>
+              <a
+                href="https://steamcommunity.com/sharedfiles/filedetails/?id=3080002958"
+                target="_blank"
+              >
                 Play online: Tabletop Simulator
               </a>
+            </li>
+            <li>
+              <a href="/ConstellationCardsQuickstart.pdf">Quickstart PDF</a>
             </li>
           </ul>
         </div>
         <div className="column is-one-quarter">
           <ul>
+            <li>
+              <strong>Data Files for Developers</strong>
+            </li>
             <li>
               <a href="/cards.pdf">cards.pdf</a> (printable cards)
             </li>
@@ -26,7 +38,14 @@ export default function Page() {
         </div>
         <div className="column is-one-quarter">
           <p>
-            Cards use the <a href="https://fonts.google.com/specimen/Neuton" target="_blank">Neuton</a> font under the OFL license: <a href="/OFL.txt" target="_blank">OFL.txt</a>
+            Cards use the{" "}
+            <a href="https://fonts.google.com/specimen/Neuton" target="_blank">
+              Neuton
+            </a>{" "}
+            font under the OFL license:{" "}
+            <a href="/OFL.txt" target="_blank">
+              OFL.txt
+            </a>
           </p>
         </div>
       </div>
