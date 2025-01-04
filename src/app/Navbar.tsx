@@ -8,14 +8,17 @@ interface DropdownLink {
 
 interface DropdownProps {
   title: string;
+  href: string;
   links: DropdownLink[];
 }
 
 function Dropdown(props: DropdownProps) {
-  const { title, links } = props;
+  const { title, href, links } = props;
   return (
     <div className="navbar-item has-dropdown is-hoverable">
-      <a className="navbar-link">{title}</a>
+      <Link className="navbar-link" href={href}>
+        {title}
+      </Link>
       <div className="navbar-dropdown">
         {links.map((link) => (
           <Link className="navbar-item" href={link.url} key={link.url}>
@@ -67,8 +70,8 @@ export default function Navbar() {
           <Link className="navbar-item" href={"/rules"}>
             Rules
           </Link>
-          <Dropdown title="Decks" links={allDecks} />
-          <Dropdown title="Stacks" links={allStacks} />
+          <Dropdown title="Decks" href={"/decks"} links={allDecks} />
+          <Dropdown title="Stacks" href={"/stacks"} links={allStacks} />
         </div>
       </div>
     </nav>
