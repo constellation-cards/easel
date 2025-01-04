@@ -10,14 +10,14 @@ stacks:
   - name: Core Rules
     description: >
       Core Rules are cards that tell you how to play the game.
-  - name: Core Rules (Agenda)
+  - name: Agenda
     description: >
       Agenda cards tell players what they should do during the game.
       You should have at least one agenda card during play.
 
       If you aren't sure what other agenda you should have,
       the Principal is probably what you want.
-  - name: Core Rules (Crisis)
+  - name: &crisisstack Optional Rules (Crisis)
     description: >
       You can use crisis cards at different moments of the game
       to change the urgency or tension of a scene.
@@ -34,10 +34,10 @@ templates:
       stack: Core Rules
   - template: &agenda
       deck: CORE
-      stack: Core Rules (Agenda)
+      stack: Agenda
   - template: &crisis
       deck: CORE
-      stack: Core Rules (Crisis)
+      stack: *crisisstack
   - template: &agendaback
       description: >
         During play, you can speak from one of several agendas.
@@ -148,6 +148,31 @@ cards:
       <<: *storyteller
       <<: *agendaback
   - <<: *corerule
+    front: &xcard
+      name: X-Card
+      img: x.png
+      description: >
+        Start the game by reading this text aloud:
+
+        "I'd like your help. Your help to make this game fun for everyone.
+        If anything makes anyone uncomfortable in any way,
+        just lift this card up, or simply tap it. You don't have to explain why.
+        It doesn't matter why.
+        When we lift or tap this card, we simply edit out anything X-Carded."
+      rule: Flip for the remainder of the text
+    back:
+      <<: *xcard
+      description: >
+        Continue reading:
+
+        "And if there is ever an issue,
+        anyone can call for a break and we can talk privately.
+        I know it sounds funny but it will help us play amazing games together
+        and usually I'm the one who uses the X card to protect myself
+        from all of you! Please help make this game fun for everyone.
+        Thank you!"
+      rule: Lay this card at the center of the play area
+  - <<: *corerule
     template: &whatif
       name: What If?
       rule: Flip for additional rules.
@@ -183,31 +208,6 @@ cards:
         - The risks inherent in some difficult or complex action come into play?
         - A new danger appears, or an existing danger is escalated?
         - It seems dramatically appropriate for a thing to happen?
-  - <<: *corerule
-    front: &xcard
-      name: X-Card
-      img: x.png
-      description: >
-        Start the game by reading this text aloud:
-
-        "I'd like your help. Your help to make this game fun for everyone.
-        If anything makes anyone uncomfortable in any way,
-        just lift this card up, or simply tap it. You don't have to explain why.
-        It doesn't matter why.
-        When we lift or tap this card, we simply edit out anything X-Carded."
-      rule: Flip for the remainder of the text
-    back:
-      <<: *xcard
-      description: >
-        Continue reading:
-
-        "And if there is ever an issue,
-        anyone can call for a break and we can talk privately.
-        I know it sounds funny but it will help us play amazing games together
-        and usually I'm the one who uses the X card to protect myself
-        from all of you! Please help make this game fun for everyone.
-        Thank you!"
-      rule: Lay this card at the center of the play area
   - <<: *crisis
     template: &uncertain
       name: Uncertain Crisis

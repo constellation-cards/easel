@@ -1,11 +1,11 @@
 stacks:
-  - name: Frame
+  - name: &stackname Optional Rules (Frame)
     description: >
       Frame Cards help you start a game without having a specific setting or style of play in mind.
 templates:
   - template: &frame
       deck: CORE
-      stack: Frame
+      stack: *stackname
       front:
         name: Frame
         description: >
