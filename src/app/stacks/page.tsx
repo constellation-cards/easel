@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function DecksPage() {
   return (
     <>
-      <h1 className="title">Decks</h1>
+      <h1 className="title">Stacks</h1>
 
       {getStacks().map((stack) => (
         <section className="hero is-info mb-2" key={stack.uid}>
