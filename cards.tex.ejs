@@ -8,6 +8,8 @@
 
 <% cards.forEach(function(card) { -%>
 
+<% for (let i = 0; i < card.quantity; i++) { -%>
+
 % Back
 
 \constellationtitle{<%- card.back.name -%>}
@@ -58,6 +60,6 @@
 
 \page
 
-<% }); -%>
+<% }; }); -%>
 
 \stoptext
