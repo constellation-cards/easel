@@ -10,6 +10,19 @@ export default function Page() {
               <strong>Playing the Game</strong>
             </li>
             <li>
+              <a href="https://www.tabletopsimulator.com/" target="_blank">
+                Tabletop Simulator
+              </a>{" "}
+              (
+              <a
+                href="https://store.steampowered.com/app/286160/Tabletop_Simulator/"
+                target="_blank"
+              >
+                Steam
+              </a>
+              )
+            </li>
+            <li>
               <a
                 href="https://steamcommunity.com/sharedfiles/filedetails/?id=3080002958"
                 target="_blank"
@@ -18,7 +31,7 @@ export default function Page() {
               </a>
             </li>
             <li>
-              <Link href="/tts">Use cards in your own TTS game</Link>
+              <Link href="/tts">Importing cards into TTS</Link>
             </li>
             <li>
               <a href="/ConstellationCardsQuickstart.pdf">Quickstart PDF</a>
