@@ -41,7 +41,7 @@ cards:
       <<: *personality-front
       name: The Factotum
       description: >
-        The Factotum is not a leader, but serves those who do.
+        The Factotum is not a leader, but serves those who lead.
         They handle the complexities of day-to-day business.
         They hold the keys to the doors of power, and may unlock them for the right querent.
       prompts:
@@ -65,7 +65,7 @@ cards:
       <<: *personality-front
       name: The Hardliner
       description: >
-        The Hardliner upholds the de facto or de jure state of affairs.
+        The Hardliner defends and justifies the status quo.
         They resist change, whether from hard experience, stubbornness,
         or selfishness.
         They are likely to prevail against uncoordinated efforts at reform.
@@ -77,10 +77,10 @@ cards:
       <<: *personality-back
       name: The Hardliner
       description: >
-        The Hardliner upholds the de facto or de jure state of affairs.
+        The Hardliner defends and justifies the status quo.
         They resist change, whether from hard experience, stubbornness,
         or selfishness.
-        With reform looking likely, they fight even harder to hold onto their diminishing status.
+        When reform looks likely, they grow desperate to hold onto their diminishing status.
       prompts:
         - What motivates the Hardliner to defend the status quo?
         - How sincere are their stated objections to change?
@@ -92,8 +92,8 @@ cards:
       description: >
         The Mediator tries to negotiate between competing factions or ideologies.
         Doing so depends on good relations within each group.
-        Right now they're able to strike effective bargains,
-        achieving meaningful change rather than mere calm.
+        They achieve meaningful change when possible,
+        and balance the compromises such change demands.
       prompts:
         - How does the Mediator achieve their ends?
         - What sacrifices must they make?
@@ -117,7 +117,7 @@ cards:
       description: >
         The Newcomer is unfamiliar with the city and their place in it.
         They may be a new ruler, an important visitor, or the heir
-        to a fortune or legacy and now returning to inherit.
+        to a fortune or legacy they've returned to inherit.
         For now, those around them are helping them adjust.
       prompts:
         - What makes the Newcomer significant?
@@ -129,7 +129,7 @@ cards:
       description: >
         The Newcomer is unfamiliar with the city and their place in it.
         They may be a new ruler, an important visitor, or the heir
-        to a fortune or legacy and now returning to inherit.
+        to a fortune or legacy they've returned to inherit.
         Alas, those around them do not have their best interests at heart.
       prompts:
         - What makes the Newcomer significant?
@@ -153,7 +153,7 @@ cards:
       description: >
         The Plotter wishes to exploit conditions for some private goal.
         They might be corrupt officials, influence-peddlers, or blackmailers.
-        They are hunted, on the verge of exposure, using their remaining tools to survive.
+        They are hunted, on the verge of exposure, or compromised themselves.
       prompts:
         - What personal holds or secrets enable the Plotter's schemes?
         - Who works with them? Why?
