@@ -7,11 +7,11 @@ import { cardsMap, decksMap, description, stacksMap } from "./helper";
 import React from "react";
 import Link from "next/link";
 
-interface CardViewProps {
+interface CardsViewProps {
   uids: ConstellationCardUid[];
 }
 
-function CardViewFace({
+function CardsViewFace({
   card,
   face,
 }: {
@@ -49,18 +49,18 @@ function CardViewFace({
   );
 }
 
-export default function CardView(props: CardViewProps) {
+export default function CardsView(props: CardsViewProps) {
   const allCards = React.useMemo(() => cardsMap(), []);
 
   const cards = props.uids.map((uid) => allCards[uid]);
 
   return cards.map((card) => (
-    <div className="columns" key={card.uid}>
+    <div className="columns" key={card.uid} id={card.uid}>
       <div className="column">
-        <CardViewFace card={card} face={card.front} />
+        <CardsViewFace card={card} face={card.front} />
       </div>
       <div className="column">
-        <CardViewFace card={card} face={card.back} />
+        <CardsViewFace card={card} face={card.back} />
       </div>
     </div>
   ));

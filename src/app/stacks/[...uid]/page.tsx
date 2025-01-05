@@ -1,5 +1,7 @@
+import CardsToc from "@/app/CardsToc";
 import CardsView from "@/app/CardsView";
-import { description } from "@/app/helper";
+import Columns from "@/app/Columns";
+import Sidebar from "@/app/Sidebar";
 import { getStacks } from "@/cards";
 import { Metadata } from "next";
 
@@ -19,15 +21,15 @@ export default async function Page({ params }: StackPageProps) {
     throw new Error(`Stack not found with UID ${uid[0]}`);
   }
   return (
-    <>
-      <section className="hero is-info">
-        <div className="hero-body">
-          <h1 className="title">{stack.name}</h1>
-          {description(stack.description)}
-        </div>
-      </section>
+    <Columns>
+      <Sidebar stackUid={stack.uid} />
       <CardsView uids={stack.cards} />
-    </>
+      <CardsToc
+        title={stack.name}
+        desc={stack.description}
+        uids={stack.cards}
+      />
+    </Columns>
   );
 }
 

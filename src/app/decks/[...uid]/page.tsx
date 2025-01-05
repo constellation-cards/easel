@@ -1,5 +1,7 @@
+import CardsToc from "@/app/CardsToc";
 import CardsView from "@/app/CardsView";
-import { description } from "@/app/helper";
+import Columns from "@/app/Columns";
+import Sidebar from "@/app/Sidebar";
 import { getDecks } from "@/cards";
 import { Metadata } from "next";
 
@@ -17,15 +19,11 @@ export default async function Page({ params }: DeckPageProps) {
     throw new Error(`Deck not found with UID ${uid[0]}`);
   }
   return (
-    <>
-      <section className="hero is-info">
-        <div className="hero-body">
-          <h1 className="title">{deck.name}</h1>
-          {description(deck.description)}
-        </div>
-      </section>
+    <Columns>
+      <Sidebar deckUid={deck.uid} />
       <CardsView uids={deck.cards} />
-    </>
+      <CardsToc title={deck.name} desc={deck.description} uids={deck.cards} />
+    </Columns>
   );
 }
 
