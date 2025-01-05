@@ -228,7 +228,7 @@ cards:
       description: >
         You may not flip any cards in front of you (e.g. Character cards) to generate hits.
 
-        You may flip shared cards (e.g. Plot cards)
+        You may flip shared cards (e.g. Plot Twist cards)
         or draw/pick a new card (e.g. Condition card, Random oracle card).
       rule: Flip this card when the crisis is past
   - <<: *crisis
@@ -253,7 +253,7 @@ cards:
         No card in front of you (e.g. Character cards)
         may be flipped more than once to generate a hit.
 
-        You may flip group cards (e.g. Plot cards)
+        You may flip group cards (e.g. Plot Twist cards)
         or draw/pick a new card (e.g. Condition card, Random oracle card).
       rule: Flip this card when the crisis is past
   - <<: *crisis
