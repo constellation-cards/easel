@@ -52,13 +52,13 @@ cards:
       <<: *personality-back
       name: The Factotum
       description: >
-        The Factotum is not a leader, but serves those who do.
+        The Factotum is not a leader, but serves those who lead.
         They struggle with complexities of day-to-day business.
         Their inexperience, their patron's incompetence,
         or a heavy workload all weigh them down.
       prompts:
         - Who do they serve? Why?
-        - Between the Factotum and their leader, who really rules?
+        - Does the Factotum burden their leader, or vice versa?
         - What does the Factotum personally want?
   - <<: *personality
     front: &Hardliner
@@ -70,7 +70,7 @@ cards:
         or selfishness.
         They are likely to prevail against uncoordinated efforts at reform.
       prompts:
-        - What motivates the Hardliner to defend the status quo?
+        - What motivates the Hardliner to hold their position?
         - How sincere are their stated objections to change?
         - How have their beliefs changed over time?
     back:
@@ -82,7 +82,7 @@ cards:
         or selfishness.
         When reform looks likely, they grow desperate to hold onto their diminishing status.
       prompts:
-        - What motivates the Hardliner to defend the status quo?
+        - What motivates the Hardliner to hold their position?
         - How sincere are their stated objections to change?
         - How have their beliefs changed over time?
   - <<: *personality
