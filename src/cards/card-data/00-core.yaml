@@ -279,3 +279,29 @@ cards:
 
         Cards may be flipped back and used in the usual way from then on.
       rule: Flip this card when the crisis is past
+  - <<: *crisis
+    quantity: 6
+    front:
+      name: Plot Twist (Benefit)
+      description: >
+        You may deal this card to another player during play.
+        It represents some benefit that should appear later on.
+        While the benefit may or may not linger, the story effect
+        will only happen once.
+      prompts:
+        - The player put in special work to prepare or set up something
+        - Divine blessing or a powerful figure's favor
+        - A one-use device or object like a passkey
+      rule: Discard this card to get a Hit
+    back:
+      name: Plot Twist (Hindrance)
+      description: >
+        You may deal this card to another player during play.
+        It represents some hindrance that should appear later on.
+        When that hindrance comes due, the player must meet it
+        as a What If, by getting a Hit via some other rule.
+      prompts:
+        - The player chose to ignore something stated as important
+        - A predestined doom or dark prophecy
+        - A surprise calamity or stroke of bad fortune
+      rule: Pose a What If relevant to this card. Discard if the What If is met.
