@@ -144,7 +144,7 @@ function cardFiles(): string[] {
     "cards",
     "card-data"
   );
-  const files = fs.readdirSync(CARD_DATA);
+  const files = fs.readdirSync(CARD_DATA).sort();
   const yamlFiles = filter(
     (fileName) => path.extname(fileName) === ".yaml",
     files
@@ -210,6 +210,7 @@ try {
   }
 } catch (e) {
   console.error(e);
+  throw e;
 }
 
 export function getDecks(): ConstellationCardDeck[] {
