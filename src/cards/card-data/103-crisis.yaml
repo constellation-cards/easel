@@ -34,7 +34,7 @@ cards:
 
         You may flip other types of cards (e.g. Plot Twist cards)
         or draw/pick a new card (e.g. Condition or Success Oracle) to get Hits.
-      rule: Flip this card when the crisis is past
+      rule: Discard this card when the crisis has passed
   - <<: *crisis
     template: &gauntlet
       name: Gauntlet Crisis
@@ -58,8 +58,8 @@ cards:
         may be flipped more than once to get a Hit.
 
         You may flip group cards (e.g. Plot Twist cards)
-        or draw/pick a new card (e.g. Condition card, Random oracle card).
-      rule: Flip this card when the crisis is past
+        or draw/pick a new card (e.g. Condition or Success Oracle cards).
+      rule: Discard this card when the crisis has passed
   - <<: *crisis
     template: &overwhelming
       name: Overwhelming Crisis
@@ -82,7 +82,7 @@ cards:
         Immediately flip all players' Character cards to their back side.
 
         Cards may be flipped back and used in the usual way from then on.
-      rule: Flip this card when the crisis is past
+      rule: Discard this card when the crisis has passed
   - <<: *crisis
     quantity: 6
     front:
