@@ -15,7 +15,6 @@ cards:
   - <<: *crisis
     template: &uncertain
       name: Uncertain Crisis
-      rule: Define the scope of the crisis, and flip this card
     front:
       <<: *uncertain
       description: >
@@ -27,18 +26,18 @@ cards:
         - A chaotic natural disaster, such as flooding
         - Navigating a complex and ever-shifting maze
         - Entreating with capricious spirits or divinities
+      rule: Define the scope of the crisis, and flip this card
     back:
       <<: *uncertain
       description: >
-        You may not flip any cards in front of you (e.g. Character cards) to get Hits.
+        You may not flip any Character cards to get Hits.
 
-        You may flip shared cards (e.g. Plot Twist cards)
-        or draw/pick a new card (e.g. Condition card, Random oracle card).
+        You may flip other types of cards (e.g. Plot Twist cards)
+        or draw/pick a new card (e.g. Condition or Success Oracle) to get Hits.
       rule: Flip this card when the crisis is past
   - <<: *crisis
     template: &gauntlet
       name: Gauntlet Crisis
-      rule: Define the scope of the crisis, and flip this card
     front:
       <<: *gauntlet
       description: >
@@ -51,6 +50,7 @@ cards:
         - A furious and violent chase
         - Survival in a hostile and dangerous environment
         - An extended and grueling magical ritual
+      rule: Define the scope of the crisis, and flip this card
     back:
       <<: *gauntlet
       description: >
@@ -63,7 +63,6 @@ cards:
   - <<: *crisis
     template: &overwhelming
       name: Overwhelming Crisis
-      rule: Define the scope of the crisis, and flip this card
     front:
       <<: *overwhelming
       description: >
@@ -76,10 +75,11 @@ cards:
         - Final boss fights
         - Being sent to a new world
         - Confrontation with divine forces
+      rule: Define the scope of the crisis, and flip this card
     back:
       <<: *overwhelming
       description: >
-        Immediately flip all Character cards in front of all players to their back side.
+        Immediately flip all players' Character cards to their back side.
 
         Cards may be flipped back and used in the usual way from then on.
       rule: Flip this card when the crisis is past
@@ -88,24 +88,24 @@ cards:
     front:
       name: Plot Twist (Benefit)
       description: >
-        You may deal this card to another player during play.
+        You may deal this card to another player, or into the center area.
         It represents some benefit that should appear later on.
-        While the benefit may or may not linger, the story effect
-        will only happen once.
+        While the benefit might linger in the fiction, the mechanical effect
+        can only happen once.
       prompts:
-        - The player put in special work to prepare or set up something
-        - Divine blessing or a powerful figure's favor
-        - A one-use device or object like a passkey
+        - Special preparations or clever setups
+        - A favor owed or a divine blessing
+        - A one-use device or passkey that performs an action or grants access to something
+        - A window of time or a special place where something is possible
       rule: Discard this card to get a Hit
     back:
       name: Plot Twist (Hindrance)
       description: >
-        You may deal this card to another player during play.
+        You may deal this card to another player, or into the center area.
         It represents some hindrance that should appear later on.
-        When that hindrance comes due, the player must meet it
-        as a What If, by getting a Hit via some other rule.
+        When that hindrance comes due, it poses a What If to the player who triggered it.
       prompts:
-        - The player chose to ignore something stated as important
+        - Someone ignored something important or failed to prepare
         - A predestined doom or dark prophecy
         - A surprise calamity or stroke of bad fortune
       rule: Pose a What If relevant to this card. Discard if the What If is met.
