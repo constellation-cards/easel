@@ -16,7 +16,7 @@ templates:
       deck: CORE
       stack: Character (Role)
   - template: &tfront
-      rule: Flip to get a hit.
+      rule: Flip to get a Hit.
   - template: &tback
       rule: Flip when a prompt is narrated by anyone.
 cards:

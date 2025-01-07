@@ -1,0 +1,121 @@
+templates:
+  - template: &agenda
+      deck: CORE
+      stack: Agenda
+  - template: &agendaback
+      description: >
+        During play, you can speak from one of several agendas.
+
+        These agendas can be assigned individually to several people,
+        or all given to a single player.
+
+        The agendas can change hands during the game.
+        You cannot take an agenda away from someone else,
+        but you can ask someone else to give up an agenda.
+
+        If you've been assigned an agenda, you are bound to speak from it.
+stacks:
+  - name: Agenda
+    description: >
+      Agenda cards tell players what they should do during the game.
+      You should have at least one agenda card during play.
+
+      If you aren't sure what other agenda you should have,
+      the Principal is probably what you want.
+cards:
+  - <<: *agenda
+    template: &principal
+      name: The Principal
+      rule: Whoever plays this card is a principal. Flip for additional rules.
+    front:
+      <<: *principal
+      description: >
+        You create and play a Principal Character (PC).
+
+        You narrate your PC's actions, reactions,
+        and motivations.
+        You are the final authority on what your character says or does.
+      prompts:
+        - Stay true to your character
+        - Share ways for other players to help you have fun
+        - Look for opportunities to advance your story
+        - Support other players' stories
+    back:
+      <<: *principal
+      <<: *agendaback
+    quantity: 6
+  - <<: *agenda
+    template: &facilitator
+      name: The Facilitator
+      rule: Whoever plays this card is the facilitator. Flip for additional rules.
+    front:
+      <<: *facilitator
+      description: >
+        You push the scene forward by directing the spotlight of attention
+        from player to player in fun and fair ways.
+
+        Move the spotlight:
+      prompts:
+        - toward a PC who's at risk or in danger
+        - toward a player who hasn't acted recently
+        - toward a player who has an interesting idea
+        - away from a player who finished a cool action
+    back:
+      <<: *facilitator
+      <<: *agendaback
+  - <<: *agenda
+    template: &lorekeeper
+      name: The Lorekeeper
+      rule: Whoever plays this card is the lorekeeper. Flip for additional rules.
+    front:
+      <<: *lorekeeper
+      description: >
+        You oversee the background details of the game world.
+        Defer to players whose PC's heritage, origin, or interests would supply answers
+        to background questions.
+      prompts:
+        - Who was the greatest Paladin in history?
+        - What languages might my character learn to speak?
+        - When did the dragons disappear?
+        - How does magic work, anyway?
+    back:
+      <<: *lorekeeper
+      <<: *agendaback
+  - <<: *agenda
+    template: &referee
+      name: The Referee
+      rule: Whoever plays this card is the referee. Flip for additional rules.
+    front:
+      <<: *referee
+      description: >
+        You adjudicate questions about the rules of the game,
+        and make changes to the rules with the group's consent.
+        Any player can suggest how to handle a rule, but you have the final say.
+
+        Example rulings:
+      prompts:
+        - Is a given card applicable to this fictional situation?
+        - How should a given card's text be interpreted?
+        - Is it time to create a new card?
+    back:
+      <<: *referee
+      <<: *agendaback
+  - <<: *agenda
+    template: &storyteller
+      name: The Storyteller
+      rule: Whoever plays this card is the storyteller. Flip for additional rules.
+    front:
+      <<: *storyteller
+      description: >
+        The game also has Ensemble Characters (ECs),
+        sometimes called Non-Player Characters (NPCs).
+        You narrate their actions and reactions as
+        antagonists, allies, bystanders, and so on.
+      prompts:
+        - Give ECs a name and identity
+        - Find the essential humanity of every EC
+        - Don't steal agency or spotlight from the PCs
+        - Initiate actions that prompt a PC response
+    back:
+      <<: *storyteller
+      <<: *agendaback

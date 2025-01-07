@@ -1,0 +1,111 @@
+stacks:
+  - name: &crisisstack Optional Rules (Crisis)
+    description: >
+      You can use crisis cards at different moments of the game
+      to change the urgency or tension of a scene.
+
+      Introducing a crisis card changes the rules of card draws and flips
+      in special situations.
+      The crisis card is discarded once the scene ends.
+templates:
+  - template: &crisis
+      deck: CORE
+      stack: *crisisstack
+cards:
+  - <<: *crisis
+    template: &uncertain
+      name: Uncertain Crisis
+    front:
+      <<: *uncertain
+      description: >
+        Some situations cannot be solved by skill or virtue, but only good fortune.
+
+        When you encounter such a crisis, decide what it would take to escape it,
+        such as leaving the area successfully.
+      prompts:
+        - A chaotic natural disaster, such as flooding
+        - Navigating a complex and ever-shifting maze
+        - Entreating with capricious spirits or divinities
+      rule: Define the scope of the crisis, and flip this card
+    back:
+      <<: *uncertain
+      description: >
+        You may not flip any Character cards to get Hits.
+
+        You may flip other types of cards (e.g. Plot Twist cards)
+        or draw/pick a new card (e.g. Condition or Success Oracle) to get Hits.
+      rule: Discard this card when the crisis has passed
+  - <<: *crisis
+    template: &gauntlet
+      name: Gauntlet Crisis
+    front:
+      <<: *gauntlet
+      description: >
+        Some situations are grueling and exhausting, wearing down your reserves
+        faster than you can recover. Sooner or later, something has to give.
+
+        When you encounter such a crisis, decide what it would take to survive it,
+        such as escaping an enemy or saving a friend.
+      prompts:
+        - A furious and violent chase
+        - Survival in a hostile and dangerous environment
+        - An extended and grueling magical ritual
+      rule: Define the scope of the crisis, and flip this card
+    back:
+      <<: *gauntlet
+      description: >
+        No card in front of you (e.g. Character cards)
+        may be flipped more than once to get a Hit.
+
+        You may flip group cards (e.g. Plot Twist cards)
+        or draw/pick a new card (e.g. Condition or Success Oracle cards).
+      rule: Discard this card when the crisis has passed
+  - <<: *crisis
+    template: &overwhelming
+      name: Overwhelming Crisis
+    front:
+      <<: *overwhelming
+      description: >
+        Some situations will wreck a character's plans and assumptions,
+        or be so daunting they have no idea how to handle it at first.
+
+        When you encounter such a crisis, decide what it would take to survive it,
+        such as defeating an enemy or finding shelter.
+      prompts:
+        - Final boss fights
+        - Being sent to a new world
+        - Confrontation with divine forces
+      rule: Define the scope of the crisis, and flip this card
+    back:
+      <<: *overwhelming
+      description: >
+        Immediately flip all players' Character cards to their back side.
+
+        Cards may be flipped back and used in the usual way from then on.
+      rule: Discard this card when the crisis has passed
+  - <<: *crisis
+    quantity: 6
+    front:
+      name: Plot Twist (Benefit)
+      description: >
+        You may deal this card to another player, or into the center area.
+        It represents some benefit that should appear later on.
+        While the benefit might linger in the fiction, the mechanical effect
+        can only happen once.
+      prompts:
+        - Special preparations or clever setups
+        - A favor owed or a divine blessing
+        - A one-use device or passkey that performs an action or grants access to something
+        - A window of time or a special place where something is possible
+      rule: Discard this card to get a Hit
+    back:
+      name: Plot Twist (Hindrance)
+      description: >
+        You may deal this card to another player, or into the center area.
+        It represents some hindrance that should appear later on.
+        When that hindrance comes due, it poses a What If to the player who triggered it.
+      prompts:
+        - Someone ignored something important or failed to prepare
+        - A predestined doom or dark prophecy
+        - A surprise calamity or stroke of bad fortune
+      rule: Pose a What If relevant to this card. Discard if the What If is met.

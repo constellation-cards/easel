@@ -1,0 +1,137 @@
+decks:
+  - name: CORE
+    description: >
+      The CORE deck contains all the "core rules" of the game:
+      player agendas, character cards, conditions, and random oracles.
+
+      This deck alone doesn't have specific flavor,
+      but it can be used to build any game you want to play.
+stacks:
+  - name: Core Rules
+    description: >
+      Core Rules are cards that tell you how to play the game.
+presets:
+  - name: New Empty Spread
+    description: Create a new empty spread
+  - name: New Character
+    description: Create a new character
+    sources:
+      - stack: Character (Upbringing)
+        quantity: 1
+        flipRule: front
+      - stack: Character (Role)
+        quantity: 1
+        flipRule: front
+      - stack: Character (Focus)
+        quantity: 1
+        flipRule: front
+templates:
+  - template: &corerule
+      deck: CORE
+      stack: Core Rules
+cards:
+  - <<: *corerule
+    front: &xcard
+      name: X-Card
+      img: x.png
+      description: >
+        Start the game by reading this text aloud:
+
+        "I'd like your help. Your help to make this game fun for everyone.
+        If anything makes anyone uncomfortable in any way,
+        just lift this card up, or simply tap it. You don't have to explain why.
+        It doesn't matter why.
+        When we lift or tap this card, we simply edit out anything X-Carded."
+      rule: Flip for the remainder of the text
+    back:
+      <<: *xcard
+      description: >
+        Continue reading:
+
+        "And if there is ever an issue,
+        anyone can call for a break and we can talk privately.
+        I know it sounds funny but it will help us play amazing games together
+        and usually I'm the one who uses the X card to protect myself
+        from all of you! Please help make this game fun for everyone.
+        Thank you!"
+      rule: Lay this card at the center of the play area
+  - <<: *corerule
+    template: &whatif
+      name: What If?
+      rule: Flip for additional rules.
+    front:
+      <<: *whatif
+      description: >
+        When another player narrates a PC's action,
+        such as "I attack the ogre",
+        you can ask "what if...?"
+        You must propose an interesting alternative outcome,
+        such as "what if the ogre smashes you across the room?"
+
+        If anyone else in the group accepts the What If,
+        and no player vetoes it, the original player must
+        get a Hit for their narration to prevail.
+        They can also opt to accept the What If.
+
+        What Ifs can pre-empt the action ("your attack doesn't land, the ogre smashes you")
+        or add to it ("your attack lands, and the ogre counters").
+    back:
+      <<: *whatif
+      description: >
+        Other players can suggest ways to build on the What If,
+        or propose their own alternatives. Only one What If can prevail.
+
+        Use What Ifs to make characters work overcome threats, or
+        introduce complications to their actions. What Ifs can
+        pre-empt the original action, or add an outcome after it finishes.
+
+        What If...
+      prompts:
+        - A Condition card you took would interfere with your action?
+        - The risks inherent in some difficult or complex action come into play?
+        - A new danger appears, or an existing danger is escalated?
+        - It seems dramatically appropriate for a thing to happen?
+  - <<: *corerule
+    front: &characters
+      name: Character Cards
+      backgroundImage: character
+      description: >
+        To create a new PC, pick three cards: Focus, Role, and Origin.
+        You can choose cards at random, or select them yourself.
+
+        These cards describe the traits that you want to spotlight during the game.
+        Just because someone else has the Courage card
+        doesn't mean your character isn't courageous,
+        only that it's not going to be the quality you're focusing on.
+      prompts:
+        - "Front: get a Hit by flipping the card"
+        - "Back: flip when a prompt is narrated by anyone"
+      rule: Other side is identical
+    back: *characters
+  - <<: *corerule
+    front:
+      name: Condition Cards
+      backgroundImage: condition
+      description: >
+        You can take a condition to get a Hit. Describe how.
+        You can flip a front-side condition to worsen it and get a Hit. Describe how.
+        Players who pose a What If can suggest a Condition that would meet it.
+
+        The condition is fictionally true and limits your actions.
+        Other players can should ask What If when a condition would interfere with something you do.
+        Discard any conditions that no longer apply in the fiction.
+
+        Individual condition cards describe how to clear them.
+      rule: Flip to see examples
+    back:
+      name: Condition Examples
+      backgroundImage: condition
+      description: >
+        Conditions are a way to achieve success at a cost.
+      prompts:
+        - "You take Disarmed to score a final sword blow"
+        - "Another player suggests that touching the idol will leave you Magicked"
+        - "Take Weakened to stay within the poison cloud"
+        - "You're already Hurt, but you can worsen it to Wounded to launch a final desperate attack"
+        - "Spend a scene being healed by a priestess to discard Hurt, or a week of downtime doing odd jobs to discard Indebted"
+      rule: Flip to see rules

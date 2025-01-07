@@ -15,38 +15,10 @@ templates:
         - is how the condition limits the fiction
         - I want to know how that changes the fictional situation for your character moving forward.
   - template: &tfront
-      rule: Flip to worsen the condition and get a hit. Discard by spending a scene attending to the condition.
+      rule: Flip to worsen the condition and get a Hit. Discard by spending a scene attending to the condition.
   - template: &tback
       rule: Discard by spending downtime attending to the condition.
 cards:
-  - deck: CORE
-    stack: Core Rules
-    front:
-      name: Condition Cards
-      backgroundImage: condition
-      description: >
-        You can take a condition to get a hit. Describe how.
-        You can flip a front-side condition to worsen it and get a hit. Describe how.
-        Players who pose a What If can suggest a Condition that would meet it.
-
-        The condition is fictionally true and limits your actions.
-        Other players can should ask What If when a condition would interfere with something you do.
-        Discard any conditions that no longer apply in the fiction.
-
-        Individual condition cards describe how to clear them.
-      rule: Flip to see examples
-    back:
-      name: Condition Examples
-      backgroundImage: condition
-      description: >
-        Conditions are a way to achieve success at a cost.
-      prompts:
-        - "You take Disarmed to score a final sword blow"
-        - "Another player suggests that touching the idol will leave you Magicked"
-        - "Take Weakened to stay within the poison cloud"
-        - "You're already Hurt, but you can worsen it to Wounded to launch a final desperate attack"
-        - "Spend a scene being healed by a priestess to discard Hurt, or a week of downtime doing odd jobs to discard Indebted"
-      rule: Flip to see rules
   - <<: *template
     front:
       <<: *tfront
@@ -59,7 +31,7 @@ cards:
         You can't exert yourself too much without making it worse.
       prompts:
         - An enemy attacked you
-        - You took a long fall or hit something heavy
+        - You took a long fall or ran into something heavy
         - You were in a natural disaster or magical calamity
     back:
       <<: *tback

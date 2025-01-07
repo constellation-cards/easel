@@ -39,7 +39,7 @@ export default function Home() {
         <hr />
         <p>
           You can play online via Tabletop Simulator on Steam. The Community
-          Workshop link is at the bottom of this page. You can click on the
+          Workshop link is at the bottom of this page. You can click on the{" "}
           <strong>Quickstart PDF</strong> link at the bottom for the rules.
         </p>
         <p>
@@ -47,7 +47,7 @@ export default function Home() {
           will be able to once the cards are finalized.
         </p>
         <p>
-          To see the cards in the game, start browsing by clicking on the
+          To see the cards in the game, start browsing by clicking on the{" "}
           <strong>Decks</strong> and <strong>Stacks</strong> lists.
         </p>
       </div>

@@ -41,8 +41,8 @@ cards:
         - You were carrying the right item at the right moment
         - Allies intervened in your favor
         - An important lesson from your past came to mind
-      rule: Discard to generate a hit
-    quantity: 5
+      rule: Discard to get a Hit
+    quantity: 6
   - <<: *random
     back:
       name: Miss
@@ -56,4 +56,4 @@ cards:
         - Allies were thwarted, absent, or ineffective
         - Overconfidence sabotaged your success
       rule: Discard this card
-    quantity: 5
+    quantity: 6
