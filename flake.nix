@@ -17,6 +17,7 @@
           ghostscript
           graphicsmagick
           imagemagick
+          inkscape
         ];
       in
       {

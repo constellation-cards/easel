@@ -9,6 +9,8 @@
 % https://tex.stackexchange.com/a/673819
 \definelayer[cardicons][x=\dimexpr\backspace-\leftmarginwidth-\leftmargindistance,width=\dimexpr\paperwidth+\rightmargindistance+\rightmarginwidth,y=\dimexpr\topspace-\headerheight-\headerdistance,height=\dimexpr\paperheight-\footerdistance-\footerheight]
 
+\setupexternalfigures[order={pdf,png,svg},location=global,directory={gameicons}]
+
 \setupbackgrounds[page][background=cardicons]
 
 <% cards.forEach(function(card) { -%>
@@ -17,10 +19,7 @@
 
 % Back
 
-\setlayer
-  [cardicons][preset=righttop]
-  {\externalfigure}
-
+\setlayer[cardicons][preset=righttop]{\externalfigure[cloud-download.svg][width=1cm,height=1cm,frame=on]}
 
 \constellationtitle{<%- card.back.name -%>}
 \constellationstack{<%- card.stack.name -%>}
@@ -47,9 +46,7 @@
 
 % Front
 
-\setlayer
-  [cardicons][preset=lefttop]
-  {\externalfigure}
+\setlayer[cardicons][preset=righttop]{\externalfigure[cloud-upload.svg][width=1cm,height=1cm,frame=on]}
 
 \constellationtitle{<%- card.front.name -%>}
 \constellationstack{<%- card.stack.name -%>}
