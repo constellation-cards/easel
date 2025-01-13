@@ -6,11 +6,21 @@
 \emergencystretch 3em
 \vfuzz\hfuzz
 
+% https://tex.stackexchange.com/a/673819
+\definelayer[cardicons][x=\dimexpr\backspace-\leftmarginwidth-\leftmargindistance,width=\dimexpr\paperwidth+\rightmargindistance+\rightmarginwidth,y=\dimexpr\topspace-\headerheight-\headerdistance,height=\dimexpr\paperheight-\footerdistance-\footerheight]
+
+\setupbackgrounds[page][background=cardicons]
+
 <% cards.forEach(function(card) { -%>
 
 <% for (let i = 0; i < card.quantity; i++) { -%>
 
 % Back
+
+\setlayer
+  [cardicons][preset=righttop]
+  {\externalfigure}
+
 
 \constellationtitle{<%- card.back.name -%>}
 \constellationstack{<%- card.stack.name -%>}
@@ -36,6 +46,10 @@
 \page
 
 % Front
+
+\setlayer
+  [cardicons][preset=lefttop]
+  {\externalfigure}
 
 \constellationtitle{<%- card.front.name -%>}
 \constellationstack{<%- card.stack.name -%>}
