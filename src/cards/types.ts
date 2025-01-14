@@ -7,7 +7,7 @@ export type ConstellationCardUid = string;
  * An IMAGE is a reference to an icon or background image.
  * This can either be a hard-coded symbolic name, or a URL.
  */
-export type ConstellationCardImage = string | null | undefined;
+export type ConstellationCardIcon = string | null | undefined;
 
 /**
  * A DECK is a collection of CARDS.
@@ -27,6 +27,11 @@ export interface ConstellationCardDeck {
    * An explanation of the deck's contents and purpose
    */
   description: string;
+
+  /**
+   * A symbolic name for an icon to use for this deck
+   */
+  icon: ConstellationCardIcon;
 
   /**
    * All the cards in this deck, by ID
@@ -56,9 +61,9 @@ export interface ConstellationCardStack {
   description: string;
 
   /**
-   * The list of icons associated with this stack
+   * A symbolic name for an icon to use for this deck
    */
-  icons: ConstellationCardImage[];
+  icon: ConstellationCardIcon;
 
   /**
    * All the cards in this stack, by ID
@@ -71,11 +76,6 @@ export interface ConstellationCardFace {
    * Every face has a unique name; sometimes a card front and back faces share it
    */
   name: string;
-
-  /**
-   * Cards can have a semi-transparent image as a background
-   */
-  backgroundImage: ConstellationCardImage;
 
   /**
    * Cards can optionally have flavor text, shown in italics at the top

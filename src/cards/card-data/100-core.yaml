@@ -33,7 +33,6 @@ cards:
   - <<: *corerule
     front: &xcard
       name: X-Card
-      img: x.png
       description: >
         Start the game by reading this text aloud:
 
@@ -94,7 +93,6 @@ cards:
   - <<: *corerule
     front: &characters
       name: Character Cards
-      backgroundImage: character
       description: >
         To create a new PC, pick three cards: Focus, Role, and Origin.
         You can choose cards at random, or select them yourself.
@@ -111,7 +109,6 @@ cards:
   - <<: *corerule
     front:
       name: Condition Cards
-      backgroundImage: condition
       description: >
         You can take a condition to get a Hit. Describe how.
         You can flip a front-side condition to worsen it and get a Hit. Describe how.
@@ -125,7 +122,6 @@ cards:
       rule: Flip to see examples
     back:
       name: Condition Examples
-      backgroundImage: condition
       description: >
         Conditions are a way to achieve success at a cost.
       prompts:
