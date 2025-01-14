@@ -19,7 +19,12 @@
 
 % Back
 
-\setlayer[cardicons][preset=righttop]{\externalfigure[cloud-download.svg][width=1cm,height=1cm]}
+<% if (card.deck.icon) { -%>
+\setlayer[cardicons][preset=lefttop]{\externalfigure[<%- card.deck.icon -%>.svg][width=1cm,height=1cm]}
+<% } -%>
+<% if (card.stack.icon) { -%>
+\setlayer[cardicons][preset=righttop]{\externalfigure[<%- card.stack.icon -%>.svg][width=1cm,height=1cm]}
+<% } -%>
 
 \constellationtitle{<%- card.back.name -%>}
 \constellationstack{<%- card.stack.name -%>}
@@ -46,7 +51,12 @@
 
 % Front
 
-\setlayer[cardicons][preset=righttop]{\externalfigure[cloud-upload.svg][width=1cm,height=1cm]}
+<% if (card.deck.icon) { -%>
+\setlayer[cardicons][preset=lefttop]{\externalfigure[<%- card.deck.icon -%>.svg][width=1cm,height=1cm]}
+<% } -%>
+<% if (card.stack.icon) { -%>
+\setlayer[cardicons][preset=righttop]{\externalfigure[<%- card.stack.icon -%>.svg][width=1cm,height=1cm]}
+<% } -%>
 
 \constellationtitle{<%- card.front.name -%>}
 \constellationstack{<%- card.stack.name -%>}

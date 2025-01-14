@@ -6,10 +6,12 @@ decks:
 
       This deck alone doesn't have specific flavor,
       but it can be used to build any game you want to play.
+    icon: ursa-major
 stacks:
   - name: Core Rules
     description: >
       Core Rules are cards that tell you how to play the game.
+    icon: rule-book
 presets:
   - name: New Empty Spread
     description: Create a new empty spread

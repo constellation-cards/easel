@@ -7,6 +7,7 @@ decks:
 
       Cards in this deck tend to be flavored for a fantasy adventure game.
       However, you can make cards tailored for any other setting.
+    icon: beast-eye
 stacks:
   - name: Encounter
     description: >

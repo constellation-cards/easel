@@ -34,8 +34,8 @@ const allCards = reduce(
     const quantity = 1; // newCard.quantity
     const newCard = {
       ...card,
-      deck: pick(["uid", "name"], decks[card.deck]),
-      stack: pick(["uid", "name", "icons"], stacks[card.stack]),
+      deck: pick(["uid", "name", "icon"], decks[card.deck]),
+      stack: pick(["uid", "name", "icon"], stacks[card.stack]),
     };
     return concat(cards, repeat(newCard, quantity));
   },
