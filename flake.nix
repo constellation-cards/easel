@@ -21,6 +21,30 @@
         ];
       in
       {
+        packages.nodemodules = pkgs.buildNpmPackage {
+          name = "constellation-cards-easel-nodemodules";
+          nativeBuildInputs = with pkgs; [ nodejs_22 ];
+          src = self;
+          npmDepsHash = "sha256-NHIVSIUSZjbBQQa+cB/XRgFUDbCybKNVKpE5AhsXcjE=";
+          npmBuildScript = "true";
+          installPhase = ''
+            mkdir $out
+            cp -r node_modules/* $out/
+          '';
+        };
+        packages.nextjs = pkgs.stdenv.mkDerivation {
+          name = "constellation-cards-easel-nodemodules";
+          nativeBuildInputs = easeldeps ++ [ self.packages.${system}.nodemodules ];
+          src = self;
+          buildPhase = ''
+            ln -s ${self.packages.${system}.nodemodules} node_modules
+            npm run testbuild
+          '';
+          installPhase = ''
+            mkdir $out
+            cp -r out/* $out/
+          '';
+        };
         packages.default = pkgs.buildNpmPackage {
           name = "constellation-cards-easel";
           nativeBuildInputs = easeldeps;

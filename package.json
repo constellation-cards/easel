@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "true": "true",
     "dev": "next dev --turbopack",
     "testbuild": "jest && next build",
     "build": "next build",
