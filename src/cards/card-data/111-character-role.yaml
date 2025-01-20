@@ -8,9 +8,7 @@ stacks:
 
       The flip side of a role card talks about the challenges and hazards
       your character faces on their journey.
-    icons:
-      - star
-      - user
+    icon: person
 templates:
   - template: &template
       deck: CORE

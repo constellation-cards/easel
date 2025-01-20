@@ -2,22 +2,26 @@ const ejs = require("ejs");
 const fs = require("fs");
 const ramda = require("ramda");
 
-const { concat, isEmpty, isNil, isNotEmpty, isNotNil, pick, reduce, repeat } = ramda;
+const { concat, isNotEmpty, isNotNil, pick, reduce, repeat } = ramda;
 
 // Paths we care about
 
-const [infile, outfile, ...args] = process.argv.slice(2)
+const [infile, outfile, ...args] = process.argv.slice(2);
 
-const CARDS_JSON = infile
-const CARDS_TEX_EJS = "cards.tex.ejs"
-const CARDS_TEX = outfile
+const CARDS_JSON = infile;
+const CARDS_TEX_EJS = "cards.tex.ejs";
+const CARDS_TEX = outfile;
 
 // Turn an array of records into a map of UID => [Record, Record...]
 function recordsToMap(records) {
-  return reduce((a, v) => {
-    a[v.uid] = v;
-    return a;
-  }, {}, records);
+  return reduce(
+    (a, v) => {
+      a[v.uid] = v;
+      return a;
+    },
+    {},
+    records
+  );
 }
 
 const cardDataRaw = fs.readFileSync(CARDS_JSON).toString();
@@ -34,8 +38,8 @@ const allCards = reduce(
     const quantity = 1; // newCard.quantity
     const newCard = {
       ...card,
-      deck: pick(["uid", "name"], decks[card.deck]),
-      stack: pick(["uid", "name", "icons"], stacks[card.stack]),
+      deck: pick(["uid", "name", "icon"], decks[card.deck]),
+      stack: pick(["uid", "name", "icon"], stacks[card.stack]),
     };
     return concat(cards, repeat(newCard, quantity));
   },
@@ -43,16 +47,29 @@ const allCards = reduce(
   cardData.cards
 );
 
-let cards
-if (isNotNil(process.env.CRUX_CARDS_DECK) && isNotEmpty(process.env.CRUX_CARDS_DECK)) {
-  cards = allCards.filter(card => card.deck.name == process.env.CRUX_CARDS_DECK);
+let cards;
+if (
+  isNotNil(process.env.CRUX_CARDS_DECK) &&
+  isNotEmpty(process.env.CRUX_CARDS_DECK)
+) {
+  cards = allCards.filter(
+    (card) => card.deck.name == process.env.CRUX_CARDS_DECK
+  );
 } else {
-  cards = allCards
+  cards = allCards;
 }
 
-const description = (inputString) => inputString.split("\n").join("\n\n");
+const functions = {
+  description: (inputString) => inputString.split("\n").join("\n\n"),
+};
+
+const options = {
+  useDeckIcons: false,
+  useStackIcons: true,
+  useFaceIcons: true,
+};
 
 const template = fs.readFileSync(CARDS_TEX_EJS).toString();
-const output = ejs.render(template, {cards, description});
+const output = ejs.render(template, { ...options, ...functions, cards });
 
 fs.writeFileSync(CARDS_TEX, output);

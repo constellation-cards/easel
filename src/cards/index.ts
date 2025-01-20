@@ -34,6 +34,7 @@ const deckTemplate: ConstellationCardDeck = {
   uid: "",
   name: "",
   description: "",
+  icon: "",
   cards: [],
 };
 
@@ -41,13 +42,12 @@ const stackTemplate: ConstellationCardStack = {
   uid: "",
   name: "",
   description: "",
-  icons: [],
+  icon: "",
   cards: [],
 };
 
 const faceTemplate: ConstellationCardFace = {
   name: "",
-  backgroundImage: null,
   flavor: "",
   description: "",
   prompts: [],

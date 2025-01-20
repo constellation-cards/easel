@@ -17,7 +17,6 @@ templates:
       stack: Emotion Oracle
       front:
         name: Emotion
-        backgroundImage: help-circle.png
         description: >
           Oracle cards can answer questions. Draw one card for a simple answer, or two cards for a complex one.
 

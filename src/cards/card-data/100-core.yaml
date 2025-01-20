@@ -6,10 +6,12 @@ decks:
 
       This deck alone doesn't have specific flavor,
       but it can be used to build any game you want to play.
+    icon: ursa-major
 stacks:
   - name: Core Rules
     description: >
       Core Rules are cards that tell you how to play the game.
+    #icon: rule-book
 presets:
   - name: New Empty Spread
     description: Create a new empty spread
@@ -33,7 +35,6 @@ cards:
   - <<: *corerule
     front: &xcard
       name: X-Card
-      img: x.png
       description: >
         Start the game by reading this text aloud:
 
@@ -81,9 +82,8 @@ cards:
         Other players can suggest ways to build on the What If,
         or propose their own alternatives. Only one What If can prevail.
 
-        Use What Ifs to make characters work overcome threats, or
-        introduce complications to their actions. What Ifs can
-        pre-empt the original action, or add an outcome after it finishes.
+        Use What Ifs to make characters work to overcome threats, or
+        introduce complications and consequences.
 
         What If...
       prompts:
@@ -94,7 +94,6 @@ cards:
   - <<: *corerule
     front: &characters
       name: Character Cards
-      backgroundImage: character
       description: >
         To create a new PC, pick three cards: Focus, Role, and Origin.
         You can choose cards at random, or select them yourself.
@@ -111,7 +110,6 @@ cards:
   - <<: *corerule
     front:
       name: Condition Cards
-      backgroundImage: condition
       description: >
         You can take a condition to get a Hit. Describe how.
         You can flip a front-side condition to worsen it and get a Hit. Describe how.
@@ -125,7 +123,6 @@ cards:
       rule: Flip to see examples
     back:
       name: Condition Examples
-      backgroundImage: condition
       description: >
         Conditions are a way to achieve success at a cost.
       prompts:
