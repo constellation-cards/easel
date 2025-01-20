@@ -19,15 +19,19 @@
 
 % Back
 
-<% if (card.deck.icon) { -%>
+<% if (useDeckIcons && card.deck.icon) { -%>
 \setlayer[cardicons][preset=lefttop]{\externalfigure[<%- card.deck.icon -%>.svg][width=1cm,height=1cm]}
 <% } -%>
-<% if (card.stack.icon) { -%>
+<% if (useStackIcons && card.stack.icon) { -%>
 \setlayer[cardicons][preset=righttop]{\externalfigure[<%- card.stack.icon -%>.svg][width=1cm,height=1cm]}
+<% } -%>
+<% if (useFaceIcons) { -%>
+\setlayer[cardicons][preset=leftbottom]{\externalfigure[easel-back-left.svg][width=1cm,height=1cm]}
+\setlayer[cardicons][preset=rightbottom]{\externalfigure[easel-back-right.svg][width=1cm,height=1cm]}
 <% } -%>
 
 \constellationtitle{<%- card.back.name -%>}
-\constellationstack{<%- card.stack.name -%>}
+\constellationstack{<%- card.deck.name -%> -- <%- card.stack.name -%>}
 
 <% if (card.back.flavor) { -%>
 \constellationquote{<%- card.back.flavor -%>}
@@ -51,15 +55,19 @@
 
 % Front
 
-<% if (card.deck.icon) { -%>
+<% if (useDeckIcons && card.deck.icon) { -%>
 \setlayer[cardicons][preset=lefttop]{\externalfigure[<%- card.deck.icon -%>.svg][width=1cm,height=1cm]}
 <% } -%>
-<% if (card.stack.icon) { -%>
+<% if (useStackIcons && card.stack.icon) { -%>
 \setlayer[cardicons][preset=righttop]{\externalfigure[<%- card.stack.icon -%>.svg][width=1cm,height=1cm]}
+<% } -%>
+<% if (useFaceIcons) { -%>
+\setlayer[cardicons][preset=leftbottom]{\externalfigure[easel-front-left.svg][width=1cm,height=1cm]}
+\setlayer[cardicons][preset=rightbottom]{\externalfigure[easel-front-right.svg][width=1cm,height=1cm]}
 <% } -%>
 
 \constellationtitle{<%- card.front.name -%>}
-\constellationstack{<%- card.stack.name -%>}
+\constellationstack{<%- card.deck.name -%> -- <%- card.stack.name -%>}
 
 <% if (card.front.flavor) { -%>
 \constellationquote{<%- card.front.flavor -%>}

@@ -53,10 +53,12 @@
 % Inter-paragraph spacing
 \setupwhitespace[halfline]
 
+\definenarrower[NarrowRules][left=1cm,right=1cm]
+
 % Macros for card header and rule text
 \define[1]\constellationtitle{\dontleavehmode{\midaligned{\tfa\bf\underbar #1}}}
 \define[1]\constellationstack{\dontleavehmode{\midaligned{\tfx #1}}}
 \define[1]\constellationquote{\italic{#1}}
-\define[1]\constellationrule{\startalignment[middle] \italic{#1} \stopalignment}
+\define[1]\constellationrule{\startNarrowRules[left,right] \startalignment[middle] \italic{#1} \stopalignment \stopNarrowRules}
 
 \stopenvironment

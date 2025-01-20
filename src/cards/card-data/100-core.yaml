@@ -11,7 +11,7 @@ stacks:
   - name: Core Rules
     description: >
       Core Rules are cards that tell you how to play the game.
-    icon: rule-book
+    #icon: rule-book
 presets:
   - name: New Empty Spread
     description: Create a new empty spread
@@ -82,9 +82,8 @@ cards:
         Other players can suggest ways to build on the What If,
         or propose their own alternatives. Only one What If can prevail.
 
-        Use What Ifs to make characters work overcome threats, or
-        introduce complications to their actions. What Ifs can
-        pre-empt the original action, or add an outcome after it finishes.
+        Use What Ifs to make characters work to overcome threats, or
+        introduce complications and consequences.
 
         What If...
       prompts:

@@ -8,9 +8,7 @@ stacks:
       The flip side of an Upbringing card is about the limitations of these visions.
       A character's prejudices, assumptions, and social shortcomings can come from
       their upbringing as well.
-    icons:
-      - star
-      - home
+    icon: person
 templates:
   - template: &template
       deck: CORE
