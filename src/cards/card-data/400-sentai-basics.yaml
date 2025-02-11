@@ -1,0 +1,71 @@
+decks:
+  - name: SENTAI
+    description: >
+      The SENTAI deck is for playing a Super Sentai game
+      with Constellation Cards.
+      It introduces a new type of Character card,
+      as well as several new cards for managing adversaries and fights.
+stacks:
+  - name: Sentai Basics
+    description: >
+      These cards are special rules for running a Super Sentai game.
+templates:
+  - template: &sentaibasics
+      deck: SENTAI
+      stack: Sentai Basics
+cards:
+  - <<: *sentaibasics
+    front:
+      name: Arsenal
+      description: >
+        The Team starts with an Arsenal: Personal Weapons, Team Bazooka,
+        Combining Mecha, and Red Powerup. Each of these items starts
+        the game with a 1 Star Rating. Ratings are team-wide,
+        even for Personal Weapons.
+
+        After each story arc, raise the Star Rating of one Arsenal item
+        by 1, with no upper limit.
+
+        Rules that say "inflict Star Damage" mean to use the Star Rating
+        of the Arsenal item that was used in the attack.
+      rule: Flip to see additional rules
+    back:
+      name: Arsenal (Examples)
+      description: >
+        The team has 2 Stars in Personal Weapons.
+        If the Red Ranger attacks a mob of minions,
+        they do 2 Stars worth of damage.
+
+        If the team must combine their mecha to fight a giant enemy,
+        they'd inflict damage based on their Combining Mecha rating.
+      rule: Flip to see additional rules
+  - <<: *sentaibasics
+    front:
+      name: Team Bazooka
+      flavor: >
+        "Pole Position! Super Highway Buster!" -- Go-Onger
+      description: >
+        The team can combine their weapons and/or activation devices
+        into a single weapon system capable of inflicting tremendous
+        damage.
+
+        The Team Bazooka cannot be fired if the boss has any Special Moves
+        available.
+      rule: Flip to inflict Team Bazooka Star Damage on a human-sized boss
+    back:
+      name: Team Bazooka
+      description: >
+        Once fired, the Team Bazooka is unavailable
+        until the enemy is defeated.
+      rule: Flip once the enemy has been defeated
+  - <<: *sentaibasics
+    front:
+      name: Combining Mecha
+      description: >
+        Basically the Bazooka but for when they grow big.
+      rule: Flip to inflict Combining Mecha Star Damage on a giant-sized boss
+    back:
+      name: Combining Mecha
+      description: >
+        Basically the Bazooka but for when they grow big.
+      rule: Flip once the team takes a substantial hit or collateral damage is inflicted

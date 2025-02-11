@@ -1,0 +1,82 @@
+stacks:
+  - name: Character (Color)
+    description: >
+      Color cards exemplify the archetypes of Super Sentai characters.
+      Each character who bears a color has a relationship to its archetype.
+      Some fulfill the archetype fully, while others subvert or transcend it.
+
+      Color archetypes have positive qualities (bravery, cunning), but also
+      negative traits and flaws.
+templates:
+  - template: &charactercolor
+      deck: SENTAI
+      stack: Character (Color)
+  - template: &charactercolorfront
+      flavor: TODO
+      description: TODO
+      prompts:
+        - TODO
+      rule: Flip to get a Hit.
+  - template: &charactercolorback
+      flavor: TODO
+      description: TODO
+      prompts:
+        - TODO
+      rule: Flip when a prompt is narrated by anyone.
+cards:
+  - <<: *charactercolor
+    front:
+      <<: *charactercolorfront
+      name: Red
+    back:
+      <<: *charactercolorback
+      name: Red
+  - <<: *charactercolor
+    front:
+      <<: *charactercolorfront
+      name: Green
+    back:
+      <<: *charactercolorback
+      name: Green
+  - <<: *charactercolor
+    front:
+      <<: *charactercolorfront
+      name: Blue
+    back:
+      <<: *charactercolorback
+      name: Blue
+  - <<: *charactercolor
+    front:
+      <<: *charactercolorfront
+      name: Black
+    back:
+      <<: *charactercolorback
+      name: Black
+  - <<: *charactercolor
+    front:
+      <<: *charactercolorfront
+      name: Yellow
+    back:
+      <<: *charactercolorback
+      name: Yellow
+  - <<: *charactercolor
+    front:
+      <<: *charactercolorfront
+      name: Pink
+    back:
+      <<: *charactercolorback
+      name: Pink
+  - <<: *charactercolor
+    front:
+      <<: *charactercolorfront
+      name: Silver
+    back:
+      <<: *charactercolorback
+      name: Silver
+  - <<: *charactercolor
+    front:
+      <<: *charactercolorfront
+      name: Gold
+    back:
+      <<: *charactercolorback
+      name: Gold

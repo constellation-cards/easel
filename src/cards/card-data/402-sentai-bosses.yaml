@@ -1,0 +1,44 @@
+stacks:
+  - name: Special Move
+    description: >
+      Special Moves are attacks or techniques that major monsters can use during battle.
+      When the Special Move's front face is up, the move can be used against the heroes.
+      The card is then flipped.
+
+      When the card's back side is up, the Special Move is vulnerable to
+      defeat. It can be sealed away, destroyed, countered, or otherwise rendered ineffective.
+templates:
+  - template: &specialmove
+      deck: SENTAI
+      stack: Special Move
+  - template: &specialmovefront
+      flavor: TODO
+      description: TODO
+      prompts:
+        - TODO
+      rule: Flip to get a Hit.
+  - template: &specialmoveback
+      flavor: TODO
+      description: TODO
+      prompts:
+        - TODO
+      rule: Flip when a prompt is narrated by anyone.
+cards:
+  - <<: *specialmove
+    front:
+      <<: *specialmovefront
+      name: Example Special Move
+      description: >
+        The boss breathes fire or some shit.
+        The target of the attack must flip a card to get a Hit,
+        or be unable to attack further until another character aids them.
+      rule: Flip this card once an attack is made
+    back:
+      <<: *specialmoveback
+      name: Example Special Move
+      description: >
+        The boss's fire breath is on recharge or some shit, I don't know.
+
+        Heroes may direct Star Damage toward this card, instead of the boss's HP.
+        If they do so, discard the card immediately.
+      rule: Flip this card once any hero character has acted. Discard if damaged.
