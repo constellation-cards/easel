@@ -10,7 +10,7 @@ templates:
   - template: &template
       deck: CORE
       stack: Condition
-      quantity: 6
+      quantity: 1
       NOTES:
         - is how the condition limits the fiction
         - I want to know how that changes the fictional situation for your character moving forward.
